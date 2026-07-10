@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Documentation MEMIA BPOS</title>
+  <meta name="description" content="Documentation MEMIA BPOS : installation, fonctionnement quotidien, agents, connecteurs, sécurité, MCP, distribution et guides FR/EN.">
+  <link rel="canonical" href="https://memia.ai/docs/">
+  <meta property="og:title" content="Documentation MEMIA BPOS">
+  <meta property="og:description" content="Le hub documentaire pour installer, comprendre et opérer MEMIA BPOS.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://memia.ai/docs/">
+  <meta property="og:image" content="https://memia.ai/assets/logos/memia-logo-horizontal.png">
+  <link rel="icon" type="image/png" href="/assets/logos/memia-favicon.png">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="/" aria-label="MEMIA BPOS">
+        <img src="/assets/logos/memia-logo-horizontal.png" alt="MEMIA">
+        <span class="brand-badge">BPOS</span>
+      </a>
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="/install/">Installer</a>
+        <a href="/agents/">Agents</a>
+        <a href="/connectors/">Connecteurs</a>
+        <a href="/security/">Sécurité</a>
+        <a href="/docs/" aria-current="page">Docs</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="eyebrow">Documentation</p>
+        <h1>Installer, comprendre et opérer MEMIA BPOS.</h1>
+        <p class="lead">Le hub documentaire regroupe le quickstart, les concepts, les connecteurs, les agents, la sécurité, MCP, la distribution et les guides complets en français et anglais.</p>
+      </div>
+    </section>
+
+    <section class="section tight">
+      <div class="wrap grid cols-3">
+        <article class="card">
+          <h3>Pour démarrer</h3>
+          <p>Installer, créer un premier projet, faire une capture et demander à l’assistant de mettre à jour la mémoire.</p>
+          <div class="cta-row">
+            <a class="button secondary" href="/install/">Installation</a>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Pour connecter</h3>
+          <p>Brancher Gmail, WhatsApp, calendriers, réunions, fichiers ou webhooks avec une gouvernance claire.</p>
+          <div class="cta-row">
+            <a class="button secondary" href="/connectors/">Connecteurs</a>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Pour sécuriser</h3>
+          <p>Comprendre local-first, secrets hors dépôt, validations humaines et séparation du site public.</p>
+          <div class="cta-row">
+            <a class="button secondary" href="/security/">Sécurité</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section band">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Parcours</p>
+          <h2>Lire dans le bon ordre.</h2>
+        </div>
+        <div class="grid cols-4">
+          <article class="card">
+            <span class="number">1</span>
+            <h3>Pourquoi</h3>
+            <p>Comprendre le problème : les assistants ont besoin d’une mémoire opératoire durable.</p>
+          </article>
+          <article class="card">
+            <span class="number">2</span>
+            <h3>Installer</h3>
+            <p>Créer l’instance, vérifier le statut, activer Git et Obsidian si utile.</p>
+          </article>
+          <article class="card">
+            <span class="number">3</span>
+            <h3>Travailler</h3>
+            <p>Lancer projets, captures, décisions, handovers et actions préparées.</p>
+          </article>
+          <article class="card">
+            <span class="number">4</span>
+            <h3>Étendre</h3>
+            <p>Ajouter agents, connecteurs, MCP, gouvernance et déploiement public.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Références publiques</p>
+          <h2>Les documents principaux du package.</h2>
+        </div>
+        <div class="grid cols-2">
+          <article class="card">
+            <h3>Guide français complet</h3>
+            <p>Fonctionnement quotidien, IPCRWA, projets, captures, connecteurs, agents, sécurité et distribution.</p>
+            <a class="button secondary" href="/guides/fr/">Lire le guide FR</a>
+          </article>
+          <article class="card">
+            <h3>English operating guide</h3>
+            <p>Complete English guide for technical users, teams and integrators.</p>
+            <a class="button secondary" href="/guides/en/">Read EN guide</a>
+          </article>
+          <article class="card">
+            <h3>Agents</h3>
+            <p>Agents cœur, conseil board et familles spécialisées incluses dans le package.</p>
+            <a class="button secondary" href="/agents/">Voir les agents</a>
+          </article>
+          <article class="card">
+            <h3>Distribution</h3>
+            <p>GitHub, npm, ZIP, Homebrew et hébergement du site statique sur VPS.</p>
+            <a class="button secondary" href="/install/">Voir l’installation</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section band">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow">Développeurs</p>
+          <h2>CLI, MCP et package public.</h2>
+          <p class="lead">La documentation développeur vit dans le package : `README.md`, `INSTALLATION.md`, `mcp/README.md`, `docs/DISTRIBUTION.md`, `docs/WEBSITE-FR.md` et `docs/WEBSITE-EN.md`.</p>
+        </div>
+        <div class="terminal">memia status
+memia agents list
+memia surfaces list
+memia mcp
+npm run site:check</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <strong>MEMIA BPOS</strong><br>
+        <span>Copyright © 2026 Kairros.</span>
+      </div>
+      <div class="footer-links">
+        <a href="/">Accueil</a>
+        <a href="/install/">Installer</a>
+        <a href="/agents/">Agents</a>
+        <a href="/security/">Sécurité</a>
+      </div>
+    </div>
+  </footer>
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>

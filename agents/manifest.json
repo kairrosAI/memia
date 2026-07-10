@@ -1,0 +1,3864 @@
+{
+  "schema": "memia-agent-manifest/v1",
+  "product": "MEMIA BPOS",
+  "subtitle": "Business and Personal Operating System",
+  "generated_at": "2026-07-07T17:47:12.601Z",
+  "counts": {
+    "core": 12,
+    "board": 6,
+    "catalog": 200,
+    "total": 218
+  },
+  "policy": {
+    "default_enabled_catalog": true,
+    "connector_activation_requires_review": true,
+    "external_actions_require_approval": true,
+    "llm_agnostic": true
+  },
+  "copyright": "Copyright (c) 2026 Kairros",
+  "agents": [
+    {
+      "id": "memia-capture-author",
+      "name": "MEMIA Capture Author",
+      "category": "Core",
+      "kind": "core",
+      "status": "ready",
+      "default_enabled": true,
+      "summary": "Transforme une entrée brute en capture exploitable, datée, qualifiée et prête à router.",
+      "tags": [
+        "capture",
+        "inbox",
+        "ipcrwa"
+      ],
+      "file": "agents/core/memia-capture-author.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Turns raw input into a dated, qualified capture that is ready to route."
+    },
+    {
+      "id": "memia-capture-router",
+      "name": "MEMIA Capture Router",
+      "category": "Core",
+      "kind": "core",
+      "status": "ready",
+      "default_enabled": true,
+      "summary": "Décide la destination IPCRWA correcte et justifie le routage sans créer de doublon inutile.",
+      "tags": [
+        "routing",
+        "ipcrwa",
+        "governance"
+      ],
+      "file": "agents/core/memia-capture-router.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Chooses the correct IPCRWA destination and explains the routing without creating unnecessary duplicates."
+    },
+    {
+      "id": "memia-project-steward",
+      "name": "MEMIA Project Steward",
+      "category": "Core",
+      "kind": "core",
+      "status": "ready",
+      "default_enabled": true,
+      "summary": "Maintient un projet actif avec objectif, état, décisions, prochaines actions et handover.",
+      "tags": [
+        "project",
+        "handover",
+        "decisions"
+      ],
+      "file": "agents/core/memia-project-steward.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Keeps an active project clear with goal, state, decisions, next actions and handover."
+    },
+    {
+      "id": "memia-run-operator",
+      "name": "MEMIA Run Operator",
+      "category": "Core",
+      "kind": "core",
+      "status": "ready",
+      "default_enabled": true,
+      "summary": "Exploite une responsabilité continue avec routines, registres, incidents et reprise claire.",
+      "tags": [
+        "run",
+        "ops",
+        "routine"
+      ],
+      "file": "agents/core/memia-run-operator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Operates an ongoing responsibility with routines, registers, incidents and clear recovery state."
+    },
+    {
+      "id": "memia-resource-curator",
+      "name": "MEMIA Resource Curator",
+      "category": "Core",
+      "kind": "core",
+      "status": "ready",
+      "default_enabled": true,
+      "summary": "Transforme une connaissance durable en ressource propre, sourcée et retrouvable.",
+      "tags": [
+        "resource",
+        "knowledge",
+        "reference"
+      ],
+      "file": "agents/core/memia-resource-curator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Turns durable knowledge into a clean, sourced and findable resource."
+    },
+    {
+      "id": "memia-workspace-builder",
+      "name": "MEMIA Workspace Builder",
+      "category": "Core",
+      "kind": "core",
+      "status": "ready",
+      "default_enabled": true,
+      "summary": "Crée un espace temporaire de travail avec inputs, outputs, notes et règle de fermeture.",
+      "tags": [
+        "workspace",
+        "draft",
+        "prototype"
+      ],
+      "file": "agents/core/memia-workspace-builder.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Creates a temporary work area with inputs, outputs, notes and a clear closure rule."
+    },
+    {
+      "id": "memia-board-builder",
+      "name": "MEMIA Board Builder",
+      "category": "Core",
+      "kind": "core",
+      "status": "ready",
+      "default_enabled": true,
+      "summary": "Crée une vue de pilotage lisible pour projets, runs, risques et prochaines actions.",
+      "tags": [
+        "board",
+        "dashboard",
+        "cockpit"
+      ],
+      "file": "agents/core/memia-board-builder.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Builds a readable operating board for projects, runs, risks and next actions."
+    },
+    {
+      "id": "memia-doc-writer",
+      "name": "MEMIA Doc Writer",
+      "category": "Core",
+      "kind": "core",
+      "status": "ready",
+      "default_enabled": true,
+      "summary": "Produit des documents techniques et guides d’usage avec structure, commandes et vérifications.",
+      "tags": [
+        "documentation",
+        "guide",
+        "readme"
+      ],
+      "file": "agents/core/memia-doc-writer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces technical documents and usage guides with structure, commands and verification steps."
+    },
+    {
+      "id": "memia-social-draft",
+      "name": "MEMIA Social Draft",
+      "category": "Core",
+      "kind": "core",
+      "status": "ready",
+      "default_enabled": true,
+      "summary": "Prépare des brouillons de posts sans publication automatique, avec angle, variantes et garde-fous.",
+      "tags": [
+        "content",
+        "social",
+        "draft"
+      ],
+      "file": "agents/core/memia-social-draft.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Prepares social post drafts without automatic publishing, with angle, variants and guardrails."
+    },
+    {
+      "id": "memia-product-shaper",
+      "name": "MEMIA Product Shaper",
+      "category": "Core",
+      "kind": "core",
+      "status": "ready",
+      "default_enabled": true,
+      "summary": "Cadre une idée produit en proposition de valeur, périmètre, expérience et critères de réussite.",
+      "tags": [
+        "product",
+        "strategy",
+        "ux"
+      ],
+      "file": "agents/core/memia-product-shaper.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Frames a product idea into value proposition, scope, experience and success criteria."
+    },
+    {
+      "id": "memia-security-doctor",
+      "name": "MEMIA Security Doctor",
+      "category": "Core",
+      "kind": "core",
+      "status": "ready",
+      "default_enabled": true,
+      "summary": "Contrôle secrets, permissions, surfaces d’intégration et risques avant activation.",
+      "tags": [
+        "security",
+        "secrets",
+        "audit"
+      ],
+      "file": "agents/core/memia-security-doctor.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Reviews secrets, permissions, integration surfaces and activation risks before use."
+    },
+    {
+      "id": "memia-obsidian-mapper",
+      "name": "MEMIA Obsidian Mapper",
+      "category": "Core",
+      "kind": "core",
+      "status": "ready",
+      "default_enabled": true,
+      "summary": "Organise une instance MEMIA comme vault Obsidian sans casser la structure IPCRWA.",
+      "tags": [
+        "obsidian",
+        "markdown",
+        "links"
+      ],
+      "file": "agents/core/memia-obsidian-mapper.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Organizes a MEMIA instance as an Obsidian vault without breaking the IPCRWA structure."
+    },
+    {
+      "id": "memia-board-chair",
+      "name": "MEMIA Board Chair",
+      "category": "Board",
+      "kind": "board",
+      "status": "ready",
+      "default_enabled": true,
+      "summary": "Orchestre le conseil MEMIA BPOS et transforme plusieurs avis experts en recommandation de décision.",
+      "tags": [
+        "board",
+        "decision",
+        "governance"
+      ],
+      "file": "agents/board/memia-board-chair.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Chairs MEMIA BPOS board reviews and turns expert opinions into a decision-ready recommendation."
+    },
+    {
+      "id": "memia-security-officer",
+      "name": "MEMIA Security Officer",
+      "category": "Board",
+      "kind": "board",
+      "status": "ready",
+      "default_enabled": true,
+      "summary": "Contrôle secrets, permissions, connecteurs, actions externes et risques avant activation.",
+      "tags": [
+        "security",
+        "secrets",
+        "permissions",
+        "approval"
+      ],
+      "file": "agents/board/memia-security-officer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Reviews secrets, permissions, connector scopes, external actions and risks before activation."
+    },
+    {
+      "id": "memia-product-strategist",
+      "name": "MEMIA Product Strategist",
+      "category": "Board",
+      "kind": "board",
+      "status": "ready",
+      "default_enabled": true,
+      "summary": "Cadre les décisions produit avec cible, promesse, onboarding, packaging et roadmap.",
+      "tags": [
+        "product",
+        "roadmap",
+        "onboarding"
+      ],
+      "file": "agents/board/memia-product-strategist.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Frames product decisions around target users, promise, onboarding, packaging and roadmap."
+    },
+    {
+      "id": "memia-architecture-lead",
+      "name": "MEMIA Architecture Lead",
+      "category": "Board",
+      "kind": "board",
+      "status": "ready",
+      "default_enabled": true,
+      "summary": "Garantit une architecture portable, local-first, MCP-compatible et agnostique LLM.",
+      "tags": [
+        "architecture",
+        "mcp",
+        "llm-agnostic",
+        "local-first"
+      ],
+      "file": "agents/board/memia-architecture-lead.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Keeps the architecture portable, local-first, MCP-compatible and LLM-agnostic."
+    },
+    {
+      "id": "memia-operations-lead",
+      "name": "MEMIA Operations Lead",
+      "category": "Board",
+      "kind": "board",
+      "status": "ready",
+      "default_enabled": true,
+      "summary": "Transforme les workflows en runbooks exploitables avec monitoring, escalade et rollback.",
+      "tags": [
+        "operations",
+        "runbook",
+        "monitoring",
+        "rollback"
+      ],
+      "file": "agents/board/memia-operations-lead.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Turns workflows into operating runbooks with monitoring, escalation and rollback."
+    },
+    {
+      "id": "memia-data-privacy-steward",
+      "name": "MEMIA Data Privacy Steward",
+      "category": "Board",
+      "kind": "board",
+      "status": "ready",
+      "default_enabled": true,
+      "summary": "Applique minimisation, anonymisation, séparation des surfaces et règles de conservation.",
+      "tags": [
+        "privacy",
+        "data-minimization",
+        "retention",
+        "anonymization"
+      ],
+      "file": "agents/board/memia-data-privacy-steward.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Applies data minimization, anonymization, surface separation and retention rules."
+    },
+    {
+      "id": "memia-sales-call-prep-assistant",
+      "name": "MEMIA Sales Call Prep Assistant",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer la préparation d’appels commerciaux et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "sales",
+        "call",
+        "prep",
+        "assistant"
+      ],
+      "file": "agents/catalog/memia-sales-call-prep-assistant.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Sales Call Prep Assistant and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-deal-momentum-analyzer",
+      "name": "MEMIA Deal Momentum Analyzer",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Analyse la dynamique des opportunités commerciales et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "deal",
+        "momentum",
+        "analyzer"
+      ],
+      "file": "agents/catalog/memia-deal-momentum-analyzer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Analyzes Deal Momentum Analyzer and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-meeting-intelligence-system",
+      "name": "MEMIA Meeting Intelligence System",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer l’exploitation des réunions et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "meeting",
+        "intelligence",
+        "system"
+      ],
+      "file": "agents/catalog/memia-meeting-intelligence-system.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Meeting Intelligence System and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-portfolio-manager",
+      "name": "MEMIA Portfolio Manager",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Structure la gestion de portefeuille et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "portfolio",
+        "manager"
+      ],
+      "file": "agents/catalog/memia-portfolio-manager.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Structures Portfolio Manager and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-meeting-to-tasks",
+      "name": "MEMIA Meeting to Tasks",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer la transformation des réunions en actions et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "meeting",
+        "to",
+        "tasks"
+      ],
+      "file": "agents/catalog/memia-meeting-to-tasks.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Meeting to Tasks and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-cowork-deal-room",
+      "name": "MEMIA Cowork Deal Room",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer la structuration d’une deal room et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "cowork",
+        "deal",
+        "room"
+      ],
+      "file": "agents/catalog/memia-cowork-deal-room.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Cowork Deal Room and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-excel-dcf-modeler",
+      "name": "MEMIA Excel DCF Modeler",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer les modèles DCF dans Excel et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "excel",
+        "dcf",
+        "modeler"
+      ],
+      "file": "agents/catalog/memia-excel-dcf-modeler.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Excel DCF Modeler and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-excel-lbo-modeler",
+      "name": "MEMIA Excel LBO Modeler",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer les modèles LBO dans Excel et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "excel",
+        "lbo",
+        "modeler"
+      ],
+      "file": "agents/catalog/memia-excel-lbo-modeler.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Excel LBO Modeler and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-excel-pivot-wizard",
+      "name": "MEMIA Excel Pivot Wizard",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer les tableaux croisés Excel et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "excel",
+        "pivot",
+        "wizard"
+      ],
+      "file": "agents/catalog/memia-excel-pivot-wizard.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Excel Pivot Wizard and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-excel-variance-analyzer",
+      "name": "MEMIA Excel Variance Analyzer",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Analyse l’analyse des écarts dans Excel et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "excel",
+        "variance",
+        "analyzer"
+      ],
+      "file": "agents/catalog/memia-excel-variance-analyzer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Analyzes Excel Variance Analyzer and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-macro-economist",
+      "name": "MEMIA Macro Economist",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer l’analyse macroéconomique et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "macro",
+        "economist"
+      ],
+      "file": "agents/catalog/memia-macro-economist.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Macro Economist and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-roadmap-generator",
+      "name": "MEMIA Roadmap Generator",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les feuilles de route et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "roadmap",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-roadmap-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Roadmap Generator and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-status-report-generator",
+      "name": "MEMIA Status Report Generator",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les rapports de statut et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "status",
+        "report",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-status-report-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Status Report Generator and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-acceptance-criteria-creator",
+      "name": "MEMIA Acceptance Criteria Creator",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les critères d’acceptation et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "acceptance",
+        "criteria",
+        "creator"
+      ],
+      "file": "agents/catalog/memia-acceptance-criteria-creator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Acceptance Criteria Creator and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-audit-trail-helper",
+      "name": "MEMIA Audit Trail Helper",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer les traces d’audit et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "audit",
+        "trail",
+        "helper"
+      ],
+      "file": "agents/catalog/memia-audit-trail-helper.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Audit Trail Helper and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-backlog-grooming-assistant",
+      "name": "MEMIA Backlog Grooming Assistant",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer la revue de backlog et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "backlog",
+        "grooming",
+        "assistant"
+      ],
+      "file": "agents/catalog/memia-backlog-grooming-assistant.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Backlog Grooming Assistant and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-change-request-generator",
+      "name": "MEMIA Change Request Generator",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les demandes de changement et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "change",
+        "request",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-change-request-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Change Request Generator and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-confluence-page-generator",
+      "name": "MEMIA Confluence Page Generator",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les pages de connaissance et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "confluence",
+        "page",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-confluence-page-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Confluence Page Generator and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-definition-of-done-generator",
+      "name": "MEMIA Definition of Done Generator",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les définitions de terminé et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "definition",
+        "of",
+        "done",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-definition-of-done-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Definition of Done Generator and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-governance-checklist-generator",
+      "name": "MEMIA Governance Checklist Generator",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les checklists de gouvernance et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "governance",
+        "checklist",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-governance-checklist-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Governance Checklist Generator and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-jira-ticket-generator",
+      "name": "MEMIA Jira Ticket Generator",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les tickets de suivi et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "jira",
+        "ticket",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-jira-ticket-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Jira Ticket Generator and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-jira-workflow-creator",
+      "name": "MEMIA Jira Workflow Creator",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les workflows de suivi et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "jira",
+        "workflow",
+        "creator"
+      ],
+      "file": "agents/catalog/memia-jira-workflow-creator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Jira Workflow Creator and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-kpi-dashboard-template",
+      "name": "MEMIA KPI Dashboard Template",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les tableaux de bord KPI et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "kpi",
+        "dashboard",
+        "template"
+      ],
+      "file": "agents/catalog/memia-kpi-dashboard-template.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces KPI Dashboard Template and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-linear-issue-generator",
+      "name": "MEMIA Linear Issue Generator",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les tickets produit et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "linear",
+        "issue",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-linear-issue-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Linear Issue Generator and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-user-story-generator",
+      "name": "MEMIA User Story Generator",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les user stories et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "user",
+        "story",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-user-story-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces User Story Generator and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-approval-workflow-generator",
+      "name": "MEMIA Approval Workflow Generator",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les circuits d’approbation et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "approval",
+        "workflow",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-approval-workflow-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Approval Workflow Generator and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-n8n-workflow-generator",
+      "name": "MEMIA n8n Workflow Generator",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les workflows d’automatisation et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "n8n",
+        "workflow",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-n8n-workflow-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces n8n Workflow Generator and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-report-generator",
+      "name": "MEMIA Report Generator",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les rapports structurés et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "report",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-report-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Report Generator and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-legal-risks",
+      "name": "MEMIA Legal Risks",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer les risques juridiques et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "legal",
+        "risks"
+      ],
+      "file": "agents/catalog/memia-legal-risks.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Legal Risks and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-asana-task-creator",
+      "name": "MEMIA Asana Task Creator",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les tâches opérationnelles et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "asana",
+        "task",
+        "creator"
+      ],
+      "file": "agents/catalog/memia-asana-task-creator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Asana Task Creator and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-executive-summary-creator",
+      "name": "MEMIA Executive Summary Creator",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les synthèses exécutives et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "executive",
+        "summary",
+        "creator"
+      ],
+      "file": "agents/catalog/memia-executive-summary-creator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Executive Summary Creator and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-github-issue-creator",
+      "name": "MEMIA GitHub Issue Creator",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les issues GitHub et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "github",
+        "issue",
+        "creator"
+      ],
+      "file": "agents/catalog/memia-github-issue-creator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces GitHub Issue Creator and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-github-project-setup",
+      "name": "MEMIA GitHub Project Setup",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer la mise en place de projets GitHub et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "github",
+        "project",
+        "setup"
+      ],
+      "file": "agents/catalog/memia-github-project-setup.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame GitHub Project Setup and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-gitlab-epic-creator",
+      "name": "MEMIA GitLab Epic Creator",
+      "category": "Business Ops",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les epics GitLab et fournit une fiche exploitable avec objectifs, contexte, points ouverts, décisions à prendre et prochaines étapes.",
+      "tags": [
+        "business-ops",
+        "gitlab",
+        "epic",
+        "creator"
+      ],
+      "file": "agents/catalog/memia-gitlab-epic-creator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces GitLab Epic Creator and returns an actionable note with goals, context, open points, decisions and next steps."
+    },
+    {
+      "id": "memia-brand-consistency-checker",
+      "name": "MEMIA Brand Consistency Checker",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Analyse la cohérence de marque et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "brand",
+        "consistency",
+        "checker"
+      ],
+      "file": "agents/catalog/memia-brand-consistency-checker.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Analyzes Brand Consistency Checker and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-deal-review-framework",
+      "name": "MEMIA Deal Review Framework",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer les revues d’opportunités et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "deal",
+        "review",
+        "framework"
+      ],
+      "file": "agents/catalog/memia-deal-review-framework.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Deal Review Framework and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-knowledge-base-builder",
+      "name": "MEMIA Knowledge Base Builder",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les bases de connaissance et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "knowledge",
+        "base",
+        "builder"
+      ],
+      "file": "agents/catalog/memia-knowledge-base-builder.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Knowledge Base Builder and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-sales-comp-plan-designer",
+      "name": "MEMIA Sales Comp Plan Designer",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les plans de rémunération commerciale et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "sales",
+        "comp",
+        "plan",
+        "designer"
+      ],
+      "file": "agents/catalog/memia-sales-comp-plan-designer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Sales Comp Plan Designer and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-conversation-archaeologist",
+      "name": "MEMIA Conversation Archaeologist",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer l’analyse de conversations et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "conversation",
+        "archaeologist"
+      ],
+      "file": "agents/catalog/memia-conversation-archaeologist.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Conversation Archaeologist and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-error-boundary-creator",
+      "name": "MEMIA Error Boundary Creator",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit la gestion des erreurs applicatives et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "error",
+        "boundary",
+        "creator"
+      ],
+      "file": "agents/catalog/memia-error-boundary-creator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Error Boundary Creator and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-hiring-scorecard",
+      "name": "MEMIA Hiring Scorecard",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer les grilles de recrutement et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "hiring",
+        "scorecard"
+      ],
+      "file": "agents/catalog/memia-hiring-scorecard.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Hiring Scorecard and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-mvp-case-builder",
+      "name": "MEMIA MVP Case Builder",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les dossiers MVP et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "mvp",
+        "case",
+        "builder"
+      ],
+      "file": "agents/catalog/memia-mvp-case-builder.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces MVP Case Builder and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-practice-plan-creator",
+      "name": "MEMIA Practice Plan Creator",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les plans d’entraînement et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "practice",
+        "plan",
+        "creator"
+      ],
+      "file": "agents/catalog/memia-practice-plan-creator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Practice Plan Creator and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-quiz-maker",
+      "name": "MEMIA Quiz Maker",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les quiz et évaluations et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "quiz",
+        "maker"
+      ],
+      "file": "agents/catalog/memia-quiz-maker.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Quiz Maker and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-seo-keyword-cluster-builder",
+      "name": "MEMIA SEO Keyword Cluster Builder",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les clusters de mots-clés SEO et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "seo",
+        "keyword",
+        "cluster",
+        "builder"
+      ],
+      "file": "agents/catalog/memia-seo-keyword-cluster-builder.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces SEO Keyword Cluster Builder and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-visual-asset-finder",
+      "name": "MEMIA Visual Asset Finder",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Collecte et organise la recherche d’assets visuels et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "visual",
+        "asset",
+        "finder"
+      ],
+      "file": "agents/catalog/memia-visual-asset-finder.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Collects and organizes Visual Asset Finder and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-ux-researcher",
+      "name": "MEMIA UX Researcher",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer la recherche utilisateur et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "ux",
+        "researcher"
+      ],
+      "file": "agents/catalog/memia-ux-researcher.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame UX Researcher and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-before-you-build",
+      "name": "MEMIA Before You Build",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer le cadrage avant construction et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "before",
+        "you",
+        "build"
+      ],
+      "file": "agents/catalog/memia-before-you-build.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Before You Build and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-hypothesis-testing-engine",
+      "name": "MEMIA Hypothesis Testing Engine",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer les tests d’hypothèses et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "hypothesis",
+        "testing",
+        "engine"
+      ],
+      "file": "agents/catalog/memia-hypothesis-testing-engine.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Hypothesis Testing Engine and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-personal-growth-mentor",
+      "name": "MEMIA Personal Growth Mentor",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer la progression personnelle et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "personal",
+        "growth",
+        "mentor"
+      ],
+      "file": "agents/catalog/memia-personal-growth-mentor.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Personal Growth Mentor and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-regex-visual-debugger",
+      "name": "MEMIA Regex Visual Debugger",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer le débogage visuel de regex et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "regex",
+        "visual",
+        "debugger"
+      ],
+      "file": "agents/catalog/memia-regex-visual-debugger.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Regex Visual Debugger and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-sales-forecast-builder",
+      "name": "MEMIA Sales Forecast Builder",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les prévisions commerciales et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "sales",
+        "forecast",
+        "builder"
+      ],
+      "file": "agents/catalog/memia-sales-forecast-builder.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Sales Forecast Builder and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-pricing-strategy",
+      "name": "MEMIA Pricing Strategy",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer la stratégie de prix et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "pricing",
+        "strategy"
+      ],
+      "file": "agents/catalog/memia-pricing-strategy.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Pricing Strategy and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-game-builder",
+      "name": "MEMIA Game Builder",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les jeux interactifs et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "game",
+        "builder"
+      ],
+      "file": "agents/catalog/memia-game-builder.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Game Builder and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-technical-writer",
+      "name": "MEMIA Technical Writer",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Rédige la documentation technique et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "technical",
+        "writer"
+      ],
+      "file": "agents/catalog/memia-technical-writer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Writes Technical Writer and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-skill-composer-studio",
+      "name": "MEMIA Skill Composer Studio",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit la composition d’agents et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "skill",
+        "composer",
+        "studio"
+      ],
+      "file": "agents/catalog/memia-skill-composer-studio.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Skill Composer Studio and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-roi-calculator",
+      "name": "MEMIA ROI Calculator",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer les calculs de ROI et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "roi",
+        "calculator"
+      ],
+      "file": "agents/catalog/memia-roi-calculator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame ROI Calculator and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-social-selling-content-generator",
+      "name": "MEMIA Social Selling Content Generator",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les contenus de social selling et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "social",
+        "selling",
+        "content",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-social-selling-content-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Social Selling Content Generator and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-lookalike-customer-finder",
+      "name": "MEMIA Lookalike Customer Finder",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Collecte et organise la recherche de clients similaires et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "lookalike",
+        "customer",
+        "finder"
+      ],
+      "file": "agents/catalog/memia-lookalike-customer-finder.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Collects and organizes Lookalike Customer Finder and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-market-sizing",
+      "name": "MEMIA Market Sizing",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer le dimensionnement de marché et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "market",
+        "sizing"
+      ],
+      "file": "agents/catalog/memia-market-sizing.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Market Sizing and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-brand-voice-analyzer",
+      "name": "MEMIA Brand Voice Analyzer",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Analyse la voix de marque et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "brand",
+        "voice",
+        "analyzer"
+      ],
+      "file": "agents/catalog/memia-brand-voice-analyzer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Analyzes Brand Voice Analyzer and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-inclusive-visuals-specialist",
+      "name": "MEMIA Inclusive Visuals Specialist",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer les visuels inclusifs et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "inclusive",
+        "visuals",
+        "specialist"
+      ],
+      "file": "agents/catalog/memia-inclusive-visuals-specialist.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Inclusive Visuals Specialist and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-react-component-generator",
+      "name": "MEMIA React Component Generator",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les composants React et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "react",
+        "component",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-react-component-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces React Component Generator and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-workflow-automator",
+      "name": "MEMIA Workflow Automator",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer l’automatisation de workflows et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "workflow",
+        "automator"
+      ],
+      "file": "agents/catalog/memia-workflow-automator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Workflow Automator and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-persona-walkthrough-specialist",
+      "name": "MEMIA Persona Walkthrough Specialist",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer les walkthroughs persona et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "persona",
+        "walkthrough",
+        "specialist"
+      ],
+      "file": "agents/catalog/memia-persona-walkthrough-specialist.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Persona Walkthrough Specialist and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-visual-storyteller",
+      "name": "MEMIA Visual Storyteller",
+      "category": "Design",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Rédige les récits visuels et fournit un cadre clair avec angle, contraintes, critères de qualité et éléments à valider.",
+      "tags": [
+        "design",
+        "visual",
+        "storyteller"
+      ],
+      "file": "agents/catalog/memia-visual-storyteller.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Writes Visual Storyteller and returns a clear frame with angle, constraints, quality criteria and validation points."
+    },
+    {
+      "id": "memia-vibe-explainer",
+      "name": "MEMIA Product Vibe Explainer",
+      "category": "Productivity",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer l’explication d’un produit et fournit une synthèse actionnable avec priorités, arbitrages, risques et prochaines actions.",
+      "tags": [
+        "productivity",
+        "vibe",
+        "explainer"
+      ],
+      "file": "agents/catalog/memia-vibe-explainer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame product vibe Explainer and returns an actionable summary with priorities, trade-offs, risks and next actions."
+    },
+    {
+      "id": "memia-travel-planner",
+      "name": "MEMIA Travel Planner",
+      "category": "Productivity",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Structure la planification de voyage et fournit une synthèse actionnable avec priorités, arbitrages, risques et prochaines actions.",
+      "tags": [
+        "productivity",
+        "travel",
+        "planner"
+      ],
+      "file": "agents/catalog/memia-travel-planner.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Structures Travel Planner and returns an actionable summary with priorities, trade-offs, risks and next actions."
+    },
+    {
+      "id": "memia-product-brief",
+      "name": "MEMIA Product Brief",
+      "category": "Productivity",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer les briefs produit et fournit une synthèse actionnable avec priorités, arbitrages, risques et prochaines actions.",
+      "tags": [
+        "productivity",
+        "product",
+        "brief"
+      ],
+      "file": "agents/catalog/memia-product-brief.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Product Brief and returns an actionable summary with priorities, trade-offs, risks and next actions."
+    },
+    {
+      "id": "memia-budget-calculator",
+      "name": "MEMIA Budget Calculator",
+      "category": "Productivity",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer les budgets et fournit une synthèse actionnable avec priorités, arbitrages, risques et prochaines actions.",
+      "tags": [
+        "productivity",
+        "budget",
+        "calculator"
+      ],
+      "file": "agents/catalog/memia-budget-calculator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Budget Calculator and returns an actionable summary with priorities, trade-offs, risks and next actions."
+    },
+    {
+      "id": "memia-idea-validator",
+      "name": "MEMIA Idea Validator",
+      "category": "Productivity",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer la validation d’idées et fournit une synthèse actionnable avec priorités, arbitrages, risques et prochaines actions.",
+      "tags": [
+        "productivity",
+        "idea",
+        "validator"
+      ],
+      "file": "agents/catalog/memia-idea-validator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Idea Validator and returns an actionable summary with priorities, trade-offs, risks and next actions."
+    },
+    {
+      "id": "memia-local-expert",
+      "name": "MEMIA Local Knowledge Expert",
+      "category": "Productivity",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer la connaissance locale et fournit une synthèse actionnable avec priorités, arbitrages, risques et prochaines actions.",
+      "tags": [
+        "productivity",
+        "local",
+        "expert"
+      ],
+      "file": "agents/catalog/memia-local-expert.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Local Knowledge Expert and returns an actionable summary with priorities, trade-offs, risks and next actions."
+    },
+    {
+      "id": "memia-plane-expert",
+      "name": "MEMIA Travel Route Expert",
+      "category": "Productivity",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer les itinéraires de voyage et fournit une synthèse actionnable avec priorités, arbitrages, risques et prochaines actions.",
+      "tags": [
+        "productivity",
+        "plane",
+        "expert"
+      ],
+      "file": "agents/catalog/memia-plane-expert.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Travel Route Expert and returns an actionable summary with priorities, trade-offs, risks and next actions."
+    },
+    {
+      "id": "memia-weather-analyst",
+      "name": "MEMIA Weather Analyst",
+      "category": "Productivity",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer l’analyse météo et fournit une synthèse actionnable avec priorités, arbitrages, risques et prochaines actions.",
+      "tags": [
+        "productivity",
+        "weather",
+        "analyst"
+      ],
+      "file": "agents/catalog/memia-weather-analyst.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Weather Analyst and returns an actionable summary with priorities, trade-offs, risks and next actions."
+    },
+    {
+      "id": "memia-sync-pull",
+      "name": "MEMIA Sync Pull",
+      "category": "Productivity",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Prépare la récupération de synchronisation et fournit une synthèse actionnable avec priorités, arbitrages, risques et prochaines actions.",
+      "tags": [
+        "productivity",
+        "sync",
+        "pull"
+      ],
+      "file": "agents/catalog/memia-sync-pull.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Prepares Sync Pull and returns an actionable summary with priorities, trade-offs, risks and next actions."
+    },
+    {
+      "id": "memia-sync-setup",
+      "name": "MEMIA Sync Setup",
+      "category": "Productivity",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Prépare la configuration de synchronisation et fournit une synthèse actionnable avec priorités, arbitrages, risques et prochaines actions.",
+      "tags": [
+        "productivity",
+        "sync",
+        "setup"
+      ],
+      "file": "agents/catalog/memia-sync-setup.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Prepares Sync Setup and returns an actionable summary with priorities, trade-offs, risks and next actions."
+    },
+    {
+      "id": "memia-sync-status",
+      "name": "MEMIA Sync Status",
+      "category": "Productivity",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Prépare le statut de synchronisation et fournit une synthèse actionnable avec priorités, arbitrages, risques et prochaines actions.",
+      "tags": [
+        "productivity",
+        "sync",
+        "status"
+      ],
+      "file": "agents/catalog/memia-sync-status.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Prepares Sync Status and returns an actionable summary with priorities, trade-offs, risks and next actions."
+    },
+    {
+      "id": "memia-vibe-explorer",
+      "name": "MEMIA Product Vibe Explorer",
+      "category": "Productivity",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer l’exploration produit et fournit une synthèse actionnable avec priorités, arbitrages, risques et prochaines actions.",
+      "tags": [
+        "productivity",
+        "vibe",
+        "explorer"
+      ],
+      "file": "agents/catalog/memia-vibe-explorer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame product vibe Explorer and returns an actionable summary with priorities, trade-offs, risks and next actions."
+    },
+    {
+      "id": "memia-data-processing",
+      "name": "MEMIA Data Processing",
+      "category": "Productivity",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer le traitement de données et fournit une synthèse actionnable avec priorités, arbitrages, risques et prochaines actions.",
+      "tags": [
+        "productivity",
+        "data",
+        "processing"
+      ],
+      "file": "agents/catalog/memia-data-processing.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Data Processing and returns an actionable summary with priorities, trade-offs, risks and next actions."
+    },
+    {
+      "id": "memia-audit-plugin",
+      "name": "MEMIA Audit Plugin",
+      "category": "Productivity",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer les audits opérationnels et fournit une synthèse actionnable avec priorités, arbitrages, risques et prochaines actions.",
+      "tags": [
+        "productivity",
+        "audit",
+        "plugin"
+      ],
+      "file": "agents/catalog/memia-audit-plugin.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Audit Plugin and returns an actionable summary with priorities, trade-offs, risks and next actions."
+    },
+    {
+      "id": "memia-devil-advocate",
+      "name": "MEMIA Devil Advocate",
+      "category": "Productivity",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer le challenge critique et fournit une synthèse actionnable avec priorités, arbitrages, risques et prochaines actions.",
+      "tags": [
+        "productivity",
+        "devil",
+        "advocate"
+      ],
+      "file": "agents/catalog/memia-devil-advocate.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Devil Advocate and returns an actionable summary with priorities, trade-offs, risks and next actions."
+    },
+    {
+      "id": "memia-meeting-prep",
+      "name": "MEMIA Meeting Prep",
+      "category": "Productivity",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer la préparation de réunion et fournit une synthèse actionnable avec priorités, arbitrages, risques et prochaines actions.",
+      "tags": [
+        "productivity",
+        "meeting",
+        "prep"
+      ],
+      "file": "agents/catalog/memia-meeting-prep.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Meeting Prep and returns an actionable summary with priorities, trade-offs, risks and next actions."
+    },
+    {
+      "id": "memia-thought-partner",
+      "name": "MEMIA Thought Partner",
+      "category": "Productivity",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer la réflexion structurée et fournit une synthèse actionnable avec priorités, arbitrages, risques et prochaines actions.",
+      "tags": [
+        "productivity",
+        "thought",
+        "partner"
+      ],
+      "file": "agents/catalog/memia-thought-partner.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Thought Partner and returns an actionable summary with priorities, trade-offs, risks and next actions."
+    },
+    {
+      "id": "memia-memory-kit",
+      "name": "MEMIA Memory Kit",
+      "category": "Productivity",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer la mémoire de travail et fournit une synthèse actionnable avec priorités, arbitrages, risques et prochaines actions.",
+      "tags": [
+        "productivity",
+        "memory",
+        "kit"
+      ],
+      "file": "agents/catalog/memia-memory-kit.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Memory Kit and returns an actionable summary with priorities, trade-offs, risks and next actions."
+    },
+    {
+      "id": "memia-triage",
+      "name": "MEMIA Triage",
+      "category": "Productivity",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer le triage opérationnel et fournit une synthèse actionnable avec priorités, arbitrages, risques et prochaines actions.",
+      "tags": [
+        "productivity",
+        "triage"
+      ],
+      "file": "agents/catalog/memia-triage.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Triage and returns an actionable summary with priorities, trade-offs, risks and next actions."
+    },
+    {
+      "id": "memia-advisor",
+      "name": "MEMIA Advisor",
+      "category": "Productivity",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer le conseil structuré et fournit une synthèse actionnable avec priorités, arbitrages, risques et prochaines actions.",
+      "tags": [
+        "productivity",
+        "advisor"
+      ],
+      "file": "agents/catalog/memia-advisor.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Advisor and returns an actionable summary with priorities, trade-offs, risks and next actions."
+    },
+    {
+      "id": "memia-agent-context-loader",
+      "name": "MEMIA Agent Context Loader",
+      "category": "Productivity",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Prépare le chargement de contexte agent et fournit une synthèse actionnable avec priorités, arbitrages, risques et prochaines actions.",
+      "tags": [
+        "productivity",
+        "agent",
+        "context",
+        "loader"
+      ],
+      "file": "agents/catalog/memia-agent-context-loader.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Prepares Agent Context Loader and returns an actionable summary with priorities, trade-offs, risks and next actions."
+    },
+    {
+      "id": "memia-data-analyst",
+      "name": "MEMIA Data Analyst",
+      "category": "Productivity",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer l’analyse de données et fournit une synthèse actionnable avec priorités, arbitrages, risques et prochaines actions.",
+      "tags": [
+        "productivity",
+        "data",
+        "analyst"
+      ],
+      "file": "agents/catalog/memia-data-analyst.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Data Analyst and returns an actionable summary with priorities, trade-offs, risks and next actions."
+    },
+    {
+      "id": "memia-python-tooling",
+      "name": "MEMIA Python Tooling",
+      "category": "Productivity",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer l’outillage Python et fournit une synthèse actionnable avec priorités, arbitrages, risques et prochaines actions.",
+      "tags": [
+        "productivity",
+        "python",
+        "tooling"
+      ],
+      "file": "agents/catalog/memia-python-tooling.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Python Tooling and returns an actionable summary with priorities, trade-offs, risks and next actions."
+    },
+    {
+      "id": "memia-strategic-clarity",
+      "name": "MEMIA Strategic Clarity",
+      "category": "Productivity",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer la clarification stratégique et fournit une synthèse actionnable avec priorités, arbitrages, risques et prochaines actions.",
+      "tags": [
+        "productivity",
+        "strategic",
+        "clarity"
+      ],
+      "file": "agents/catalog/memia-strategic-clarity.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Strategic Clarity and returns an actionable summary with priorities, trade-offs, risks and next actions."
+    },
+    {
+      "id": "memia-security-scanning",
+      "name": "MEMIA Security Scanning",
+      "category": "Productivity",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Analyse la revue sécurité et fournit une synthèse actionnable avec priorités, arbitrages, risques et prochaines actions.",
+      "tags": [
+        "productivity",
+        "security",
+        "scanning"
+      ],
+      "file": "agents/catalog/memia-security-scanning.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Analyzes Security Scanning and returns an actionable summary with priorities, trade-offs, risks and next actions."
+    },
+    {
+      "id": "memia-vibe-worker",
+      "name": "MEMIA Product Vibe Worker",
+      "category": "Productivity",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer l’exécution produit et fournit une synthèse actionnable avec priorités, arbitrages, risques et prochaines actions.",
+      "tags": [
+        "productivity",
+        "vibe",
+        "worker"
+      ],
+      "file": "agents/catalog/memia-vibe-worker.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame product vibe Worker and returns an actionable summary with priorities, trade-offs, risks and next actions."
+    },
+    {
+      "id": "memia-podcast-studio",
+      "name": "MEMIA Podcast Studio",
+      "category": "Marketing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer la production podcast et fournit un plan de contenu ou d’activation avec audience, message, canaux, variantes et mesure.",
+      "tags": [
+        "marketing",
+        "podcast",
+        "studio"
+      ],
+      "file": "agents/catalog/memia-podcast-studio.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Podcast Studio and returns a content or activation plan with audience, message, channels, variants and measurement."
+    },
+    {
+      "id": "memia-quota-setting-calculator",
+      "name": "MEMIA Quota Setting Calculator",
+      "category": "Marketing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer la définition de quotas et fournit un plan de contenu ou d’activation avec audience, message, canaux, variantes et mesure.",
+      "tags": [
+        "marketing",
+        "quota",
+        "setting",
+        "calculator"
+      ],
+      "file": "agents/catalog/memia-quota-setting-calculator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Quota Setting Calculator and returns a content or activation plan with audience, message, channels, variants and measurement."
+    },
+    {
+      "id": "memia-competitor-content-analyzer",
+      "name": "MEMIA Competitor Content Analyzer",
+      "category": "Marketing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Analyse l’analyse de contenus concurrents et fournit un plan de contenu ou d’activation avec audience, message, canaux, variantes et mesure.",
+      "tags": [
+        "marketing",
+        "competitor",
+        "content",
+        "analyzer"
+      ],
+      "file": "agents/catalog/memia-competitor-content-analyzer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Analyzes Competitor Content Analyzer and returns a content or activation plan with audience, message, channels, variants and measurement."
+    },
+    {
+      "id": "memia-content-creator",
+      "name": "MEMIA Content Creator",
+      "category": "Marketing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit la création de contenu et fournit un plan de contenu ou d’activation avec audience, message, canaux, variantes et mesure.",
+      "tags": [
+        "marketing",
+        "content",
+        "creator"
+      ],
+      "file": "agents/catalog/memia-content-creator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Content Creator and returns a content or activation plan with audience, message, channels, variants and measurement."
+    },
+    {
+      "id": "memia-growth-hacker",
+      "name": "MEMIA Growth Hacker",
+      "category": "Marketing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer la croissance et fournit un plan de contenu ou d’activation avec audience, message, canaux, variantes et mesure.",
+      "tags": [
+        "marketing",
+        "growth",
+        "hacker"
+      ],
+      "file": "agents/catalog/memia-growth-hacker.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Growth Hacker and returns a content or activation plan with audience, message, channels, variants and measurement."
+    },
+    {
+      "id": "memia-webinar-to-content-multiplier",
+      "name": "MEMIA Webinar to Content Multiplier",
+      "category": "Marketing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Rédige la déclinaison de webinaires et fournit un plan de contenu ou d’activation avec audience, message, canaux, variantes et mesure.",
+      "tags": [
+        "marketing",
+        "webinar",
+        "to",
+        "content",
+        "multiplier"
+      ],
+      "file": "agents/catalog/memia-webinar-to-content-multiplier.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Writes Webinar to Content Multiplier and returns a content or activation plan with audience, message, channels, variants and measurement."
+    },
+    {
+      "id": "memia-visual-social-curator",
+      "name": "MEMIA Visual Social Curator",
+      "category": "Marketing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Collecte et organise le contenu social visuel et fournit un plan de contenu ou d’activation avec audience, message, canaux, variantes et mesure.",
+      "tags": [
+        "marketing",
+        "visual",
+        "social",
+        "curator"
+      ],
+      "file": "agents/catalog/memia-visual-social-curator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Collects and organizes Visual Social Curator and returns a content or activation plan with audience, message, channels, variants and measurement."
+    },
+    {
+      "id": "memia-short-video-strategy-planner",
+      "name": "MEMIA Short Video Strategy Planner",
+      "category": "Marketing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Structure la stratégie vidéo courte et fournit un plan de contenu ou d’activation avec audience, message, canaux, variantes et mesure.",
+      "tags": [
+        "marketing",
+        "short",
+        "video",
+        "strategy",
+        "planner"
+      ],
+      "file": "agents/catalog/memia-short-video-strategy-planner.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Structures Short Video Strategy Planner and returns a content or activation plan with audience, message, channels, variants and measurement."
+    },
+    {
+      "id": "memia-microblog-engagement-planner",
+      "name": "MEMIA Microblog Engagement Planner",
+      "category": "Marketing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Structure l’engagement microblog et fournit un plan de contenu ou d’activation avec audience, message, canaux, variantes et mesure.",
+      "tags": [
+        "marketing",
+        "microblog",
+        "engagement",
+        "planner"
+      ],
+      "file": "agents/catalog/memia-microblog-engagement-planner.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Structures Microblog Engagement Planner and returns a content or activation plan with audience, message, channels, variants and measurement."
+    },
+    {
+      "id": "memia-pitch-deck-reviewer",
+      "name": "MEMIA Pitch Deck Reviewer",
+      "category": "Marketing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Analyse les pitch decks et fournit un plan de contenu ou d’activation avec audience, message, canaux, variantes et mesure.",
+      "tags": [
+        "marketing",
+        "pitch",
+        "deck",
+        "reviewer"
+      ],
+      "file": "agents/catalog/memia-pitch-deck-reviewer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Analyzes Pitch Deck Reviewer and returns a content or activation plan with audience, message, channels, variants and measurement."
+    },
+    {
+      "id": "memia-expansion-revenue-finder",
+      "name": "MEMIA Expansion Revenue Finder",
+      "category": "Marketing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Collecte et organise les opportunités d’expansion et fournit un plan de contenu ou d’activation avec audience, message, canaux, variantes et mesure.",
+      "tags": [
+        "marketing",
+        "expansion",
+        "revenue",
+        "finder"
+      ],
+      "file": "agents/catalog/memia-expansion-revenue-finder.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Collects and organizes Expansion Revenue Finder and returns a content or activation plan with audience, message, channels, variants and measurement."
+    },
+    {
+      "id": "memia-forum-community-builder",
+      "name": "MEMIA Forum Community Builder",
+      "category": "Marketing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les communautés forum et fournit un plan de contenu ou d’activation avec audience, message, canaux, variantes et mesure.",
+      "tags": [
+        "marketing",
+        "forum",
+        "community",
+        "builder"
+      ],
+      "file": "agents/catalog/memia-forum-community-builder.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Forum Community Builder and returns a content or activation plan with audience, message, channels, variants and measurement."
+    },
+    {
+      "id": "memia-ai-citation-strategist",
+      "name": "MEMIA AI Citation Strategist",
+      "category": "Marketing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Structure la présence dans les réponses IA et fournit un plan de contenu ou d’activation avec audience, message, canaux, variantes et mesure.",
+      "tags": [
+        "marketing",
+        "ai",
+        "citation",
+        "strategist"
+      ],
+      "file": "agents/catalog/memia-ai-citation-strategist.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Structures AI Citation Strategist and returns a content or activation plan with audience, message, channels, variants and measurement."
+    },
+    {
+      "id": "memia-app-store-optimizer",
+      "name": "MEMIA App Store Optimizer",
+      "category": "Marketing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Structure l’optimisation app store et fournit un plan de contenu ou d’activation avec audience, message, canaux, variantes et mesure.",
+      "tags": [
+        "marketing",
+        "app",
+        "store",
+        "optimizer"
+      ],
+      "file": "agents/catalog/memia-app-store-optimizer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Structures App Store Optimizer and returns a content or activation plan with audience, message, channels, variants and measurement."
+    },
+    {
+      "id": "memia-book-co-author",
+      "name": "MEMIA Book Co-Author",
+      "category": "Marketing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Rédige la coécriture de livre et fournit un plan de contenu ou d’activation avec audience, message, canaux, variantes et mesure.",
+      "tags": [
+        "marketing",
+        "book",
+        "co",
+        "author"
+      ],
+      "file": "agents/catalog/memia-book-co-author.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Writes Book Co-Author and returns a content or activation plan with audience, message, channels, variants and measurement."
+    },
+    {
+      "id": "memia-linkedin-post-optimizer",
+      "name": "MEMIA LinkedIn Post Optimizer",
+      "category": "Marketing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Structure les posts LinkedIn et fournit un plan de contenu ou d’activation avec audience, message, canaux, variantes et mesure.",
+      "tags": [
+        "marketing",
+        "linkedin",
+        "post",
+        "optimizer"
+      ],
+      "file": "agents/catalog/memia-linkedin-post-optimizer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Structures LinkedIn Post Optimizer and returns a content or activation plan with audience, message, channels, variants and measurement."
+    },
+    {
+      "id": "memia-reddit-thread-analyzer",
+      "name": "MEMIA Reddit Thread Analyzer",
+      "category": "Marketing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Analyse les discussions Reddit et fournit un plan de contenu ou d’activation avec audience, message, canaux, variantes et mesure.",
+      "tags": [
+        "marketing",
+        "reddit",
+        "thread",
+        "analyzer"
+      ],
+      "file": "agents/catalog/memia-reddit-thread-analyzer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Analyzes Reddit Thread Analyzer and returns a content or activation plan with audience, message, channels, variants and measurement."
+    },
+    {
+      "id": "memia-agentic-search-optimizer",
+      "name": "MEMIA Agentic Search Optimizer",
+      "category": "Marketing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Structure la recherche agentique et fournit un plan de contenu ou d’activation avec audience, message, canaux, variantes et mesure.",
+      "tags": [
+        "marketing",
+        "agentic",
+        "search",
+        "optimizer"
+      ],
+      "file": "agents/catalog/memia-agentic-search-optimizer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Structures Agentic Search Optimizer and returns a content or activation plan with audience, message, channels, variants and measurement."
+    },
+    {
+      "id": "memia-cross-border-e-commerce-specialist",
+      "name": "MEMIA Cross-Border E-Commerce Specialist",
+      "category": "Marketing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer l’e-commerce international et fournit un plan de contenu ou d’activation avec audience, message, canaux, variantes et mesure.",
+      "tags": [
+        "marketing",
+        "cross",
+        "border",
+        "e",
+        "commerce",
+        "specialist"
+      ],
+      "file": "agents/catalog/memia-cross-border-e-commerce-specialist.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Cross-Border E-Commerce Specialist and returns a content or activation plan with audience, message, channels, variants and measurement."
+    },
+    {
+      "id": "memia-livestream-commerce-coach",
+      "name": "MEMIA Livestream Commerce Coach",
+      "category": "Marketing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer le commerce en live et fournit un plan de contenu ou d’activation avec audience, message, canaux, variantes et mesure.",
+      "tags": [
+        "marketing",
+        "livestream",
+        "commerce",
+        "coach"
+      ],
+      "file": "agents/catalog/memia-livestream-commerce-coach.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Livestream Commerce Coach and returns a content or activation plan with audience, message, channels, variants and measurement."
+    },
+    {
+      "id": "memia-podcast-strategist",
+      "name": "MEMIA Podcast Strategist",
+      "category": "Marketing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Structure la stratégie podcast et fournit un plan de contenu ou d’activation avec audience, message, canaux, variantes et mesure.",
+      "tags": [
+        "marketing",
+        "podcast",
+        "strategist"
+      ],
+      "file": "agents/catalog/memia-podcast-strategist.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Structures Podcast Strategist and returns a content or activation plan with audience, message, channels, variants and measurement."
+    },
+    {
+      "id": "memia-social-media-strategist",
+      "name": "MEMIA Social Media Strategist",
+      "category": "Marketing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Structure la stratégie réseaux sociaux et fournit un plan de contenu ou d’activation avec audience, message, canaux, variantes et mesure.",
+      "tags": [
+        "marketing",
+        "social",
+        "media",
+        "strategist"
+      ],
+      "file": "agents/catalog/memia-social-media-strategist.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Structures Social Media Strategist and returns a content or activation plan with audience, message, channels, variants and measurement."
+    },
+    {
+      "id": "memia-cross-conversation-project-manager",
+      "name": "MEMIA Cross Conversation Project Manager",
+      "category": "Data Analytics",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Structure le suivi multi-conversations et fournit une analyse vérifiable avec sources, métriques, hypothèses, limites et recommandations.",
+      "tags": [
+        "data-analytics",
+        "cross",
+        "conversation",
+        "project",
+        "manager"
+      ],
+      "file": "agents/catalog/memia-cross-conversation-project-manager.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Structures Cross Conversation Project Manager and returns a verifiable analysis with sources, metrics, assumptions, limits and recommendations."
+    },
+    {
+      "id": "memia-utm-parameter-generator",
+      "name": "MEMIA UTM Parameter Generator",
+      "category": "Data Analytics",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les paramètres UTM et fournit une analyse vérifiable avec sources, métriques, hypothèses, limites et recommandations.",
+      "tags": [
+        "data-analytics",
+        "utm",
+        "parameter",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-utm-parameter-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces UTM Parameter Generator and returns a verifiable analysis with sources, metrics, assumptions, limits and recommendations."
+    },
+    {
+      "id": "memia-data-consolidation-agent",
+      "name": "MEMIA Data Consolidation Agent",
+      "category": "Data Analytics",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer la consolidation de données et fournit une analyse vérifiable avec sources, métriques, hypothèses, limites et recommandations.",
+      "tags": [
+        "data-analytics",
+        "data",
+        "consolidation",
+        "agent"
+      ],
+      "file": "agents/catalog/memia-data-consolidation-agent.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Data Consolidation Agent and returns a verifiable analysis with sources, metrics, assumptions, limits and recommendations."
+    },
+    {
+      "id": "memia-content-seo",
+      "name": "MEMIA Content SEO",
+      "category": "Data Analytics",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Rédige le SEO de contenu et fournit une analyse vérifiable avec sources, métriques, hypothèses, limites et recommandations.",
+      "tags": [
+        "data-analytics",
+        "content",
+        "seo"
+      ],
+      "file": "agents/catalog/memia-content-seo.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Writes Content SEO and returns a verifiable analysis with sources, metrics, assumptions, limits and recommendations."
+    },
+    {
+      "id": "memia-ai-readiness-assessment",
+      "name": "MEMIA AI Readiness Assessment",
+      "category": "Data Analytics",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer l’évaluation de maturité IA et fournit une analyse vérifiable avec sources, métriques, hypothèses, limites et recommandations.",
+      "tags": [
+        "data-analytics",
+        "ai",
+        "readiness",
+        "assessment"
+      ],
+      "file": "agents/catalog/memia-ai-readiness-assessment.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame AI Readiness Assessment and returns a verifiable analysis with sources, metrics, assumptions, limits and recommendations."
+    },
+    {
+      "id": "memia-dashboard-layout-planner",
+      "name": "MEMIA Dashboard Layout Planner",
+      "category": "Data Analytics",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Structure les maquettes de tableau de bord et fournit une analyse vérifiable avec sources, métriques, hypothèses, limites et recommandations.",
+      "tags": [
+        "data-analytics",
+        "dashboard",
+        "layout",
+        "planner"
+      ],
+      "file": "agents/catalog/memia-dashboard-layout-planner.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Structures Dashboard Layout Planner and returns a verifiable analysis with sources, metrics, assumptions, limits and recommendations."
+    },
+    {
+      "id": "memia-data-collector",
+      "name": "MEMIA Data Collector",
+      "category": "Data Analytics",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Collecte et organise la collecte de données et fournit une analyse vérifiable avec sources, métriques, hypothèses, limites et recommandations.",
+      "tags": [
+        "data-analytics",
+        "data",
+        "collector"
+      ],
+      "file": "agents/catalog/memia-data-collector.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Collects and organizes Data Collector and returns a verifiable analysis with sources, metrics, assumptions, limits and recommendations."
+    },
+    {
+      "id": "memia-data-quality-checker",
+      "name": "MEMIA Data Quality Checker",
+      "category": "Data Analytics",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Analyse la qualité des données et fournit une analyse vérifiable avec sources, métriques, hypothèses, limites et recommandations.",
+      "tags": [
+        "data-analytics",
+        "data",
+        "quality",
+        "checker"
+      ],
+      "file": "agents/catalog/memia-data-quality-checker.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Analyzes Data Quality Checker and returns a verifiable analysis with sources, metrics, assumptions, limits and recommendations."
+    },
+    {
+      "id": "memia-forecast-generator",
+      "name": "MEMIA Forecast Generator",
+      "category": "Data Analytics",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les prévisions et fournit une analyse vérifiable avec sources, métriques, hypothèses, limites et recommandations.",
+      "tags": [
+        "data-analytics",
+        "forecast",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-forecast-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Forecast Generator and returns a verifiable analysis with sources, metrics, assumptions, limits and recommendations."
+    },
+    {
+      "id": "memia-report-template-generator",
+      "name": "MEMIA Report Template Generator",
+      "category": "Data Analytics",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les modèles de rapport et fournit une analyse vérifiable avec sources, métriques, hypothèses, limites et recommandations.",
+      "tags": [
+        "data-analytics",
+        "report",
+        "template",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-report-template-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Report Template Generator and returns a verifiable analysis with sources, metrics, assumptions, limits and recommendations."
+    },
+    {
+      "id": "memia-weekly-business-report",
+      "name": "MEMIA Weekly Business Report",
+      "category": "Data Analytics",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer le reporting business hebdomadaire et fournit une analyse vérifiable avec sources, métriques, hypothèses, limites et recommandations.",
+      "tags": [
+        "data-analytics",
+        "weekly",
+        "business",
+        "report"
+      ],
+      "file": "agents/catalog/memia-weekly-business-report.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Weekly Business Report and returns a verifiable analysis with sources, metrics, assumptions, limits and recommendations."
+    },
+    {
+      "id": "memia-airflow-dag-generator",
+      "name": "MEMIA Airflow DAG Generator",
+      "category": "Data Analytics",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les DAG Airflow et fournit une analyse vérifiable avec sources, métriques, hypothèses, limites et recommandations.",
+      "tags": [
+        "data-analytics",
+        "airflow",
+        "dag",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-airflow-dag-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Airflow DAG Generator and returns a verifiable analysis with sources, metrics, assumptions, limits and recommendations."
+    },
+    {
+      "id": "memia-data-catalog-updater",
+      "name": "MEMIA Data Catalog Updater",
+      "category": "Data Analytics",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer les catalogues de données et fournit une analyse vérifiable avec sources, métriques, hypothèses, limites et recommandations.",
+      "tags": [
+        "data-analytics",
+        "data",
+        "catalog",
+        "updater"
+      ],
+      "file": "agents/catalog/memia-data-catalog-updater.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Data Catalog Updater and returns a verifiable analysis with sources, metrics, assumptions, limits and recommendations."
+    },
+    {
+      "id": "memia-data-lineage-tracker",
+      "name": "MEMIA Data Lineage Tracker",
+      "category": "Data Analytics",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Collecte et organise le lignage de données et fournit une analyse vérifiable avec sources, métriques, hypothèses, limites et recommandations.",
+      "tags": [
+        "data-analytics",
+        "data",
+        "lineage",
+        "tracker"
+      ],
+      "file": "agents/catalog/memia-data-lineage-tracker.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Collects and organizes Data Lineage Tracker and returns a verifiable analysis with sources, metrics, assumptions, limits and recommendations."
+    },
+    {
+      "id": "memia-data-partitioner",
+      "name": "MEMIA Data Partitioner",
+      "category": "Data Analytics",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer le partitionnement de données et fournit une analyse vérifiable avec sources, métriques, hypothèses, limites et recommandations.",
+      "tags": [
+        "data-analytics",
+        "data",
+        "partitioner"
+      ],
+      "file": "agents/catalog/memia-data-partitioner.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Data Partitioner and returns a verifiable analysis with sources, metrics, assumptions, limits and recommendations."
+    },
+    {
+      "id": "memia-data-story-outliner",
+      "name": "MEMIA Data Story Outliner",
+      "category": "Data Analytics",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer la narration de données et fournit une analyse vérifiable avec sources, métriques, hypothèses, limites et recommandations.",
+      "tags": [
+        "data-analytics",
+        "data",
+        "story",
+        "outliner"
+      ],
+      "file": "agents/catalog/memia-data-story-outliner.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Data Story Outliner and returns a verifiable analysis with sources, metrics, assumptions, limits and recommendations."
+    },
+    {
+      "id": "memia-dbt-model-generator",
+      "name": "MEMIA DBT Model Generator",
+      "category": "Data Analytics",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les modèles dbt et fournit une analyse vérifiable avec sources, métriques, hypothèses, limites et recommandations.",
+      "tags": [
+        "data-analytics",
+        "dbt",
+        "model",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-dbt-model-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces DBT Model Generator and returns a verifiable analysis with sources, metrics, assumptions, limits and recommendations."
+    },
+    {
+      "id": "memia-luigi-task-generator",
+      "name": "MEMIA Luigi Task Generator",
+      "category": "Data Analytics",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les tâches Luigi et fournit une analyse vérifiable avec sources, métriques, hypothèses, limites et recommandations.",
+      "tags": [
+        "data-analytics",
+        "luigi",
+        "task",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-luigi-task-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Luigi Task Generator and returns a verifiable analysis with sources, metrics, assumptions, limits and recommendations."
+    },
+    {
+      "id": "memia-metadata-extractor",
+      "name": "MEMIA Metadata Extractor",
+      "category": "Data Analytics",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Collecte et organise l’extraction de métadonnées et fournit une analyse vérifiable avec sources, métriques, hypothèses, limites et recommandations.",
+      "tags": [
+        "data-analytics",
+        "metadata",
+        "extractor"
+      ],
+      "file": "agents/catalog/memia-metadata-extractor.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Collects and organizes Metadata Extractor and returns a verifiable analysis with sources, metrics, assumptions, limits and recommendations."
+    },
+    {
+      "id": "memia-window-function-generator",
+      "name": "MEMIA Window Function Generator",
+      "category": "Data Analytics",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les fonctions SQL window et fournit une analyse vérifiable avec sources, métriques, hypothèses, limites et recommandations.",
+      "tags": [
+        "data-analytics",
+        "window",
+        "function",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-window-function-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Window Function Generator and returns a verifiable analysis with sources, metrics, assumptions, limits and recommendations."
+    },
+    {
+      "id": "memia-ab-test-analyzer",
+      "name": "MEMIA A/B Test Analyzer",
+      "category": "Data Analytics",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Analyse les tests A/B et fournit une analyse vérifiable avec sources, métriques, hypothèses, limites et recommandations.",
+      "tags": [
+        "data-analytics",
+        "ab",
+        "test",
+        "analyzer"
+      ],
+      "file": "agents/catalog/memia-ab-test-analyzer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Analyzes A/B Test Analyzer and returns a verifiable analysis with sources, metrics, assumptions, limits and recommendations."
+    },
+    {
+      "id": "memia-aggregation-helper",
+      "name": "MEMIA Aggregation Helper",
+      "category": "Data Analytics",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer les agrégations et fournit une analyse vérifiable avec sources, métriques, hypothèses, limites et recommandations.",
+      "tags": [
+        "data-analytics",
+        "aggregation",
+        "helper"
+      ],
+      "file": "agents/catalog/memia-aggregation-helper.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Aggregation Helper and returns a verifiable analysis with sources, metrics, assumptions, limits and recommendations."
+    },
+    {
+      "id": "memia-website-designer",
+      "name": "MEMIA Website Designer",
+      "category": "Community",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit la conception de sites web et fournit un dossier d’exécution avec contexte technique, options, points de vigilance et suite concrète.",
+      "tags": [
+        "community",
+        "website",
+        "designer"
+      ],
+      "file": "agents/catalog/memia-website-designer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Website Designer and returns an execution brief with technical context, options, watch points and concrete next steps."
+    },
+    {
+      "id": "memia-next-js-diagnostics-agent",
+      "name": "MEMIA Next.js Diagnostics Agent",
+      "category": "Community",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Analyse le diagnostic Next.js et fournit un dossier d’exécution avec contexte technique, options, points de vigilance et suite concrète.",
+      "tags": [
+        "community",
+        "next",
+        "js",
+        "diagnostics",
+        "agent"
+      ],
+      "file": "agents/catalog/memia-next-js-diagnostics-agent.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Analyzes Next.js Diagnostics Agent and returns an execution brief with technical context, options, watch points and concrete next steps."
+    },
+    {
+      "id": "memia-draft-writer",
+      "name": "MEMIA Draft Writer",
+      "category": "Community",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Rédige les brouillons éditoriaux et fournit un dossier d’exécution avec contexte technique, options, points de vigilance et suite concrète.",
+      "tags": [
+        "community",
+        "draft",
+        "writer"
+      ],
+      "file": "agents/catalog/memia-draft-writer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Writes Draft Writer and returns an execution brief with technical context, options, watch points and concrete next steps."
+    },
+    {
+      "id": "memia-qa-test-agent",
+      "name": "MEMIA QA Test Agent",
+      "category": "Community",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer la qualité applicative et fournit un dossier d’exécution avec contexte technique, options, points de vigilance et suite concrète.",
+      "tags": [
+        "community",
+        "qa",
+        "test",
+        "agent"
+      ],
+      "file": "agents/catalog/memia-qa-test-agent.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame QA Test Agent and returns an execution brief with technical context, options, watch points and concrete next steps."
+    },
+    {
+      "id": "memia-demo-video",
+      "name": "MEMIA Demo Video",
+      "category": "Community",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer les vidéos de démonstration et fournit un dossier d’exécution avec contexte technique, options, points de vigilance et suite concrète.",
+      "tags": [
+        "community",
+        "demo",
+        "video"
+      ],
+      "file": "agents/catalog/memia-demo-video.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Demo Video and returns an execution brief with technical context, options, watch points and concrete next steps."
+    },
+    {
+      "id": "memia-repo-analyzer",
+      "name": "MEMIA Repo Analyzer",
+      "category": "Community",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Analyse l’analyse de dépôts et fournit un dossier d’exécution avec contexte technique, options, points de vigilance et suite concrète.",
+      "tags": [
+        "community",
+        "repo",
+        "analyzer"
+      ],
+      "file": "agents/catalog/memia-repo-analyzer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Analyzes Repo Analyzer and returns an execution brief with technical context, options, watch points and concrete next steps."
+    },
+    {
+      "id": "memia-api-contract",
+      "name": "MEMIA API Contract",
+      "category": "Community",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer les contrats API et fournit un dossier d’exécution avec contexte technique, options, points de vigilance et suite concrète.",
+      "tags": [
+        "community",
+        "api",
+        "contract"
+      ],
+      "file": "agents/catalog/memia-api-contract.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame API Contract and returns an execution brief with technical context, options, watch points and concrete next steps."
+    },
+    {
+      "id": "memia-code",
+      "name": "MEMIA Code Workbench",
+      "category": "Community",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer le travail de code et fournit un dossier d’exécution avec contexte technique, options, points de vigilance et suite concrète.",
+      "tags": [
+        "community",
+        "code"
+      ],
+      "file": "agents/catalog/memia-code.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Code Workbench and returns an execution brief with technical context, options, watch points and concrete next steps."
+    },
+    {
+      "id": "memia-firebase-vertex-ai",
+      "name": "MEMIA AI Runtime Connector",
+      "category": "Community",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer les connecteurs runtime IA et fournit un dossier d’exécution avec contexte technique, options, points de vigilance et suite concrète.",
+      "tags": [
+        "community",
+        "firebase",
+        "vertex",
+        "ai"
+      ],
+      "file": "agents/catalog/memia-firebase-vertex-ai.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame AI runtime connectors and returns an execution brief with technical context, options, watch points and concrete next steps."
+    },
+    {
+      "id": "memia-memory",
+      "name": "MEMIA Memory",
+      "category": "Community",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer la mémoire de contexte et fournit un dossier d’exécution avec contexte technique, options, points de vigilance et suite concrète.",
+      "tags": [
+        "community",
+        "memory"
+      ],
+      "file": "agents/catalog/memia-memory.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Memory and returns an execution brief with technical context, options, watch points and concrete next steps."
+    },
+    {
+      "id": "memia-reasoning",
+      "name": "MEMIA Reasoning",
+      "category": "Community",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer le raisonnement structuré et fournit un dossier d’exécution avec contexte technique, options, points de vigilance et suite concrète.",
+      "tags": [
+        "community",
+        "reasoning"
+      ],
+      "file": "agents/catalog/memia-reasoning.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Reasoning and returns an execution brief with technical context, options, watch points and concrete next steps."
+    },
+    {
+      "id": "memia-zai-cli",
+      "name": "MEMIA CLI Workbench",
+      "category": "Community",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer les postes de travail CLI et fournit un dossier d’exécution avec contexte technique, options, points de vigilance et suite concrète.",
+      "tags": [
+        "community",
+        "zai",
+        "cli"
+      ],
+      "file": "agents/catalog/memia-zai-cli.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame CLI Workbench and returns an execution brief with technical context, options, watch points and concrete next steps."
+    },
+    {
+      "id": "memia-memory-2",
+      "name": "MEMIA Memory",
+      "category": "Community",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer la mémoire de contexte et fournit un dossier d’exécution avec contexte technique, options, points de vigilance et suite concrète.",
+      "tags": [
+        "community",
+        "memory"
+      ],
+      "file": "agents/catalog/memia-memory-2.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Memory and returns an execution brief with technical context, options, watch points and concrete next steps."
+    },
+    {
+      "id": "memia-website-generator",
+      "name": "MEMIA Website Generator",
+      "category": "Community",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit la génération de sites web et fournit un dossier d’exécution avec contexte technique, options, points de vigilance et suite concrète.",
+      "tags": [
+        "community",
+        "website",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-website-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Website Generator and returns an execution brief with technical context, options, watch points and concrete next steps."
+    },
+    {
+      "id": "memia-frontend-developer",
+      "name": "MEMIA Frontend Developer",
+      "category": "Engineering",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer le développement frontend et fournit une proposition technique avec structure, contraintes, tests, risques et critères de validation.",
+      "tags": [
+        "engineering",
+        "frontend",
+        "developer"
+      ],
+      "file": "agents/catalog/memia-frontend-developer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Frontend Developer and returns a technical proposal with structure, constraints, tests, risks and validation criteria."
+    },
+    {
+      "id": "memia-hardware-integration-engineer",
+      "name": "MEMIA Hardware Integration Engineer",
+      "category": "Engineering",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer les intégrations matérielles et fournit une proposition technique avec structure, contraintes, tests, risques et critères de validation.",
+      "tags": [
+        "engineering",
+        "hardware",
+        "integration",
+        "engineer"
+      ],
+      "file": "agents/catalog/memia-hardware-integration-engineer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Hardware Integration Engineer and returns a technical proposal with structure, constraints, tests, risks and validation criteria."
+    },
+    {
+      "id": "memia-reliability-review-engineer",
+      "name": "MEMIA Reliability Review Engineer",
+      "category": "Engineering",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer la fiabilité applicative et fournit une proposition technique avec structure, contraintes, tests, risques et critères de validation.",
+      "tags": [
+        "engineering",
+        "reliability",
+        "review",
+        "engineer"
+      ],
+      "file": "agents/catalog/memia-reliability-review-engineer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Reliability Review Engineer and returns a technical proposal with structure, constraints, tests, risks and validation criteria."
+    },
+    {
+      "id": "memia-prompt-engineer",
+      "name": "MEMIA Prompt Engineer",
+      "category": "Engineering",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer les prompts opérationnels et fournit une proposition technique avec structure, contraintes, tests, risques et critères de validation.",
+      "tags": [
+        "engineering",
+        "prompt",
+        "engineer"
+      ],
+      "file": "agents/catalog/memia-prompt-engineer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Prompt Engineer and returns a technical proposal with structure, constraints, tests, risks and validation criteria."
+    },
+    {
+      "id": "memia-database-schema-designer",
+      "name": "MEMIA Database Schema Designer",
+      "category": "Engineering",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les schémas de base de données et fournit une proposition technique avec structure, contraintes, tests, risques et critères de validation.",
+      "tags": [
+        "engineering",
+        "database",
+        "schema",
+        "designer"
+      ],
+      "file": "agents/catalog/memia-database-schema-designer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Database Schema Designer and returns a technical proposal with structure, constraints, tests, risks and validation criteria."
+    },
+    {
+      "id": "memia-code-reviewer",
+      "name": "MEMIA Code Reviewer",
+      "category": "Engineering",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Analyse la revue de code et fournit une proposition technique avec structure, contraintes, tests, risques et critères de validation.",
+      "tags": [
+        "engineering",
+        "code",
+        "reviewer"
+      ],
+      "file": "agents/catalog/memia-code-reviewer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Analyzes Code Reviewer and returns a technical proposal with structure, constraints, tests, risks and validation criteria."
+    },
+    {
+      "id": "memia-accessibility-audit-runner",
+      "name": "MEMIA Accessibility Audit Runner",
+      "category": "Engineering",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer les audits d’accessibilité et fournit une proposition technique avec structure, contraintes, tests, risques et critères de validation.",
+      "tags": [
+        "engineering",
+        "accessibility",
+        "audit",
+        "runner"
+      ],
+      "file": "agents/catalog/memia-accessibility-audit-runner.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Accessibility Audit Runner and returns a technical proposal with structure, constraints, tests, risks and validation criteria."
+    },
+    {
+      "id": "memia-css-module-generator",
+      "name": "MEMIA CSS Module Generator",
+      "category": "Engineering",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les modules CSS et fournit une proposition technique avec structure, contraintes, tests, risques et critères de validation.",
+      "tags": [
+        "engineering",
+        "css",
+        "module",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-css-module-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces CSS Module Generator and returns a technical proposal with structure, constraints, tests, risks and validation criteria."
+    },
+    {
+      "id": "memia-django-view-generator",
+      "name": "MEMIA Django View Generator",
+      "category": "Engineering",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les vues Django et fournit une proposition technique avec structure, contraintes, tests, risques et critères de validation.",
+      "tags": [
+        "engineering",
+        "django",
+        "view",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-django-view-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Django View Generator and returns a technical proposal with structure, constraints, tests, risks and validation criteria."
+    },
+    {
+      "id": "memia-express-route-generator",
+      "name": "MEMIA Express Route Generator",
+      "category": "Engineering",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les routes Express et fournit une proposition technique avec structure, contraintes, tests, risques et critères de validation.",
+      "tags": [
+        "engineering",
+        "express",
+        "route",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-express-route-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Express Route Generator and returns a technical proposal with structure, constraints, tests, risks and validation criteria."
+    },
+    {
+      "id": "memia-go-handler-generator",
+      "name": "MEMIA Go Handler Generator",
+      "category": "Engineering",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les handlers Go et fournit une proposition technique avec structure, contraintes, tests, risques et critères de validation.",
+      "tags": [
+        "engineering",
+        "go",
+        "handler",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-go-handler-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Go Handler Generator and returns a technical proposal with structure, constraints, tests, risks and validation criteria."
+    },
+    {
+      "id": "memia-grpc-service-generator",
+      "name": "MEMIA gRPC Service Generator",
+      "category": "Engineering",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les services gRPC et fournit une proposition technique avec structure, contraintes, tests, risques et critères de validation.",
+      "tags": [
+        "engineering",
+        "grpc",
+        "service",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-grpc-service-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces gRPC Service Generator and returns a technical proposal with structure, constraints, tests, risks and validation criteria."
+    },
+    {
+      "id": "memia-nestjs-module-generator",
+      "name": "MEMIA NestJS Module Generator",
+      "category": "Engineering",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les modules NestJS et fournit une proposition technique avec structure, contraintes, tests, risques et critères de validation.",
+      "tags": [
+        "engineering",
+        "nestjs",
+        "module",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-nestjs-module-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces NestJS Module Generator and returns a technical proposal with structure, constraints, tests, risks and validation criteria."
+    },
+    {
+      "id": "memia-pwa-manifest-generator",
+      "name": "MEMIA PWA Manifest Generator",
+      "category": "Engineering",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les manifests PWA et fournit une proposition technique avec structure, contraintes, tests, risques et critères de validation.",
+      "tags": [
+        "engineering",
+        "pwa",
+        "manifest",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-pwa-manifest-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces PWA Manifest Generator and returns a technical proposal with structure, constraints, tests, risks and validation criteria."
+    },
+    {
+      "id": "memia-evidence-collector",
+      "name": "MEMIA Evidence Collector",
+      "category": "Testing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Collecte et organise la collecte de preuves et fournit un contrôle qualité avec preuves, écarts, hypothèses et actions correctives.",
+      "tags": [
+        "testing",
+        "evidence",
+        "collector"
+      ],
+      "file": "agents/catalog/memia-evidence-collector.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Collects and organizes Evidence Collector and returns a quality review with evidence, gaps, assumptions and corrective actions."
+    },
+    {
+      "id": "memia-reality-checker",
+      "name": "MEMIA Reality Checker",
+      "category": "Testing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Analyse la vérification de réalité et fournit un contrôle qualité avec preuves, écarts, hypothèses et actions correctives.",
+      "tags": [
+        "testing",
+        "reality",
+        "checker"
+      ],
+      "file": "agents/catalog/memia-reality-checker.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Analyzes Reality Checker and returns a quality review with evidence, gaps, assumptions and corrective actions."
+    },
+    {
+      "id": "memia-tool-evaluator",
+      "name": "MEMIA Tool Evaluator",
+      "category": "Testing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Analyse l’évaluation d’outils et fournit un contrôle qualité avec preuves, écarts, hypothèses et actions correctives.",
+      "tags": [
+        "testing",
+        "tool",
+        "evaluator"
+      ],
+      "file": "agents/catalog/memia-tool-evaluator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Analyzes Tool Evaluator and returns a quality review with evidence, gaps, assumptions and corrective actions."
+    },
+    {
+      "id": "memia-territory-planning-optimizer",
+      "name": "MEMIA Territory Planning Optimizer",
+      "category": "Testing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Structure la planification de territoire et fournit un contrôle qualité avec preuves, écarts, hypothèses et actions correctives.",
+      "tags": [
+        "testing",
+        "territory",
+        "planning",
+        "optimizer"
+      ],
+      "file": "agents/catalog/memia-territory-planning-optimizer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Structures Territory Planning Optimizer and returns a quality review with evidence, gaps, assumptions and corrective actions."
+    },
+    {
+      "id": "memia-cold-email-sequence-generator",
+      "name": "MEMIA Cold Email Sequence Generator",
+      "category": "Testing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les séquences d’emails froids et fournit un contrôle qualité avec preuves, écarts, hypothèses et actions correctives.",
+      "tags": [
+        "testing",
+        "cold",
+        "email",
+        "sequence",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-cold-email-sequence-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Cold Email Sequence Generator and returns a quality review with evidence, gaps, assumptions and corrective actions."
+    },
+    {
+      "id": "memia-workflow-optimizer",
+      "name": "MEMIA Workflow Optimizer",
+      "category": "Testing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Structure l’optimisation de workflows et fournit un contrôle qualité avec preuves, écarts, hypothèses et actions correctives.",
+      "tags": [
+        "testing",
+        "workflow",
+        "optimizer"
+      ],
+      "file": "agents/catalog/memia-workflow-optimizer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Structures Workflow Optimizer and returns a quality review with evidence, gaps, assumptions and corrective actions."
+    },
+    {
+      "id": "memia-test-results-analyzer",
+      "name": "MEMIA Test Results Analyzer",
+      "category": "Testing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Analyse l’analyse de résultats de tests et fournit un contrôle qualité avec preuves, écarts, hypothèses et actions correctives.",
+      "tags": [
+        "testing",
+        "test",
+        "results",
+        "analyzer"
+      ],
+      "file": "agents/catalog/memia-test-results-analyzer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Analyzes Test Results Analyzer and returns a quality review with evidence, gaps, assumptions and corrective actions."
+    },
+    {
+      "id": "memia-coverage-report-analyzer",
+      "name": "MEMIA Coverage Report Analyzer",
+      "category": "Testing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Analyse les rapports de couverture et fournit un contrôle qualité avec preuves, écarts, hypothèses et actions correctives.",
+      "tags": [
+        "testing",
+        "coverage",
+        "report",
+        "analyzer"
+      ],
+      "file": "agents/catalog/memia-coverage-report-analyzer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Analyzes Coverage Report Analyzer and returns a quality review with evidence, gaps, assumptions and corrective actions."
+    },
+    {
+      "id": "memia-database-test-helper",
+      "name": "MEMIA Database Test Helper",
+      "category": "Testing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer les tests de base de données et fournit un contrôle qualité avec preuves, écarts, hypothèses et actions correctives.",
+      "tags": [
+        "testing",
+        "database",
+        "test",
+        "helper"
+      ],
+      "file": "agents/catalog/memia-database-test-helper.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Database Test Helper and returns a quality review with evidence, gaps, assumptions and corrective actions."
+    },
+    {
+      "id": "memia-fixture-generator",
+      "name": "MEMIA Fixture Generator",
+      "category": "Testing",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les jeux de fixtures et fournit un contrôle qualité avec preuves, écarts, hypothèses et actions correctives.",
+      "tags": [
+        "testing",
+        "fixture",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-fixture-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Fixture Generator and returns a quality review with evidence, gaps, assumptions and corrective actions."
+    },
+    {
+      "id": "memia-sdk-documentation-generator",
+      "name": "MEMIA SDK Documentation Generator",
+      "category": "Documentation",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit la documentation SDK et fournit une documentation claire avec public cible, structure, exemples et maintenance prévue.",
+      "tags": [
+        "documentation",
+        "sdk",
+        "documentation",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-sdk-documentation-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces SDK Documentation Generator and returns clear documentation with target audience, structure, examples and maintenance notes."
+    },
+    {
+      "id": "memia-adr-generator",
+      "name": "MEMIA ADR Generator",
+      "category": "Documentation",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les décisions d’architecture et fournit une documentation claire avec public cible, structure, exemples et maintenance prévue.",
+      "tags": [
+        "documentation",
+        "adr",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-adr-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces ADR Generator and returns clear documentation with target audience, structure, examples and maintenance notes."
+    },
+    {
+      "id": "memia-changelog-generator",
+      "name": "MEMIA Changelog Generator",
+      "category": "Documentation",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les changelogs et fournit une documentation claire avec public cible, structure, exemples et maintenance prévue.",
+      "tags": [
+        "documentation",
+        "changelog",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-changelog-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Changelog Generator and returns clear documentation with target audience, structure, examples and maintenance notes."
+    },
+    {
+      "id": "memia-code-documentation-analyzer",
+      "name": "MEMIA Code Documentation Analyzer",
+      "category": "Documentation",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Analyse la documentation de code et fournit une documentation claire avec public cible, structure, exemples et maintenance prévue.",
+      "tags": [
+        "documentation",
+        "code",
+        "documentation",
+        "analyzer"
+      ],
+      "file": "agents/catalog/memia-code-documentation-analyzer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Analyzes Code Documentation Analyzer and returns clear documentation with target audience, structure, examples and maintenance notes."
+    },
+    {
+      "id": "memia-code-of-conduct-generator",
+      "name": "MEMIA Code of Conduct Generator",
+      "category": "Documentation",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les codes de conduite et fournit une documentation claire avec public cible, structure, exemples et maintenance prévue.",
+      "tags": [
+        "documentation",
+        "code",
+        "of",
+        "conduct",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-code-of-conduct-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Code of Conduct Generator and returns clear documentation with target audience, structure, examples and maintenance notes."
+    },
+    {
+      "id": "memia-configuration-reference-generator",
+      "name": "MEMIA Configuration Reference Generator",
+      "category": "Documentation",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les références de configuration et fournit une documentation claire avec public cible, structure, exemples et maintenance prévue.",
+      "tags": [
+        "documentation",
+        "configuration",
+        "reference",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-configuration-reference-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Configuration Reference Generator and returns clear documentation with target audience, structure, examples and maintenance notes."
+    },
+    {
+      "id": "memia-deprecation-notice-generator",
+      "name": "MEMIA Deprecation Notice Generator",
+      "category": "Documentation",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les avis de dépréciation et fournit une documentation claire avec public cible, structure, exemples et maintenance prévue.",
+      "tags": [
+        "documentation",
+        "deprecation",
+        "notice",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-deprecation-notice-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Deprecation Notice Generator and returns clear documentation with target audience, structure, examples and maintenance notes."
+    },
+    {
+      "id": "memia-design-doc-template",
+      "name": "MEMIA Design Doc Template",
+      "category": "Documentation",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les design docs et fournit une documentation claire avec public cible, structure, exemples et maintenance prévue.",
+      "tags": [
+        "documentation",
+        "design",
+        "doc",
+        "template"
+      ],
+      "file": "agents/catalog/memia-design-doc-template.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Design Doc Template and returns clear documentation with target audience, structure, examples and maintenance notes."
+    },
+    {
+      "id": "memia-prospect-research-compiler",
+      "name": "MEMIA Prospect Research Compiler",
+      "category": "Sales",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Collecte et organise la recherche prospects et fournit un plan commercial avec signaux, messages, objections, relances et critères de passage.",
+      "tags": [
+        "sales",
+        "prospect",
+        "research",
+        "compiler"
+      ],
+      "file": "agents/catalog/memia-prospect-research-compiler.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Collects and organizes Prospect Research Compiler and returns a sales plan with signals, messaging, objections, follow-ups and stage criteria."
+    },
+    {
+      "id": "memia-sales-coaching-plan-generator",
+      "name": "MEMIA Sales Coaching Plan Generator",
+      "category": "Sales",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Produit les plans de coaching commercial et fournit un plan commercial avec signaux, messages, objections, relances et critères de passage.",
+      "tags": [
+        "sales",
+        "sales",
+        "coaching",
+        "plan",
+        "generator"
+      ],
+      "file": "agents/catalog/memia-sales-coaching-plan-generator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Produces Sales Coaching Plan Generator and returns a sales plan with signals, messaging, objections, follow-ups and stage criteria."
+    },
+    {
+      "id": "memia-objection-pattern-detector",
+      "name": "MEMIA Objection Pattern Detector",
+      "category": "Sales",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Analyse les objections commerciales et fournit un plan commercial avec signaux, messages, objections, relances et critères de passage.",
+      "tags": [
+        "sales",
+        "objection",
+        "pattern",
+        "detector"
+      ],
+      "file": "agents/catalog/memia-objection-pattern-detector.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Analyzes Objection Pattern Detector and returns a sales plan with signals, messaging, objections, follow-ups and stage criteria."
+    },
+    {
+      "id": "memia-team-chemistry-evaluator",
+      "name": "MEMIA Team Chemistry Evaluator",
+      "category": "Sales",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Analyse la dynamique d’équipe et fournit un plan commercial avec signaux, messages, objections, relances et critères de passage.",
+      "tags": [
+        "sales",
+        "team",
+        "chemistry",
+        "evaluator"
+      ],
+      "file": "agents/catalog/memia-team-chemistry-evaluator.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Analyzes Team Chemistry Evaluator and returns a sales plan with signals, messaging, objections, follow-ups and stage criteria."
+    },
+    {
+      "id": "memia-deal-strategist",
+      "name": "MEMIA Deal Strategist",
+      "category": "Sales",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Structure la stratégie d’opportunité et fournit un plan commercial avec signaux, messages, objections, relances et critères de passage.",
+      "tags": [
+        "sales",
+        "deal",
+        "strategist"
+      ],
+      "file": "agents/catalog/memia-deal-strategist.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Structures Deal Strategist and returns a sales plan with signals, messaging, objections, follow-ups and stage criteria."
+    },
+    {
+      "id": "memia-personalization-at-scale",
+      "name": "MEMIA Personalization At Scale",
+      "category": "Sales",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer la personnalisation à grande échelle et fournit un plan commercial avec signaux, messages, objections, relances et critères de passage.",
+      "tags": [
+        "sales",
+        "personalization",
+        "at",
+        "scale"
+      ],
+      "file": "agents/catalog/memia-personalization-at-scale.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Personalization At Scale and returns a sales plan with signals, messaging, objections, follow-ups and stage criteria."
+    },
+    {
+      "id": "memia-customer-success-manager",
+      "name": "MEMIA Customer Success Manager",
+      "category": "Sales",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Structure le suivi customer success et fournit un plan commercial avec signaux, messages, objections, relances et critères de passage.",
+      "tags": [
+        "sales",
+        "customer",
+        "success",
+        "manager"
+      ],
+      "file": "agents/catalog/memia-customer-success-manager.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Structures Customer Success Manager and returns a sales plan with signals, messaging, objections, follow-ups and stage criteria."
+    },
+    {
+      "id": "memia-financial-goal-planner",
+      "name": "MEMIA Financial Goal Planner",
+      "category": "Finance",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Structure les objectifs financiers et fournit un modèle de décision avec hypothèses, scénarios, limites et recommandations.",
+      "tags": [
+        "finance",
+        "financial",
+        "goal",
+        "planner"
+      ],
+      "file": "agents/catalog/memia-financial-goal-planner.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Structures Financial Goal Planner and returns a decision model with assumptions, scenarios, limits and recommendations."
+    },
+    {
+      "id": "memia-budget-optimizer",
+      "name": "MEMIA Budget Optimizer",
+      "category": "Finance",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Structure l’optimisation budgétaire et fournit un modèle de décision avec hypothèses, scénarios, limites et recommandations.",
+      "tags": [
+        "finance",
+        "budget",
+        "optimizer"
+      ],
+      "file": "agents/catalog/memia-budget-optimizer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Structures Budget Optimizer and returns a decision model with assumptions, scenarios, limits and recommendations."
+    },
+    {
+      "id": "memia-portfolio-analyzer",
+      "name": "MEMIA Portfolio Analyzer",
+      "category": "Finance",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Analyse l’analyse de portefeuille et fournit un modèle de décision avec hypothèses, scénarios, limites et recommandations.",
+      "tags": [
+        "finance",
+        "portfolio",
+        "analyzer"
+      ],
+      "file": "agents/catalog/memia-portfolio-analyzer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Analyzes Portfolio Analyzer and returns a decision model with assumptions, scenarios, limits and recommendations."
+    },
+    {
+      "id": "memia-pricing-analyst",
+      "name": "MEMIA Pricing Analyst",
+      "category": "Finance",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer l’analyse de prix et fournit un modèle de décision avec hypothèses, scénarios, limites et recommandations.",
+      "tags": [
+        "finance",
+        "pricing",
+        "analyst"
+      ],
+      "file": "agents/catalog/memia-pricing-analyst.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Pricing Analyst and returns a decision model with assumptions, scenarios, limits and recommendations."
+    },
+    {
+      "id": "memia-competitor-price-tracker",
+      "name": "MEMIA Competitor Price Tracker",
+      "category": "Finance",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Collecte et organise le suivi des prix concurrents et fournit un modèle de décision avec hypothèses, scénarios, limites et recommandations.",
+      "tags": [
+        "finance",
+        "competitor",
+        "price",
+        "tracker"
+      ],
+      "file": "agents/catalog/memia-competitor-price-tracker.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Collects and organizes Competitor Price Tracker and returns a decision model with assumptions, scenarios, limits and recommendations."
+    },
+    {
+      "id": "memia-trend-researcher",
+      "name": "MEMIA Trend Researcher",
+      "category": "Product",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer la recherche de tendances et fournit un cadrage produit avec problème, utilisateurs, options, métriques et décisions.",
+      "tags": [
+        "product",
+        "trend",
+        "researcher"
+      ],
+      "file": "agents/catalog/memia-trend-researcher.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Trend Researcher and returns a product frame with problem, users, options, metrics and decisions."
+    },
+    {
+      "id": "memia-sprint-prioritizer",
+      "name": "MEMIA Sprint Prioritizer",
+      "category": "Product",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Structure la priorisation de sprint et fournit un cadrage produit avec problème, utilisateurs, options, métriques et décisions.",
+      "tags": [
+        "product",
+        "sprint",
+        "prioritizer"
+      ],
+      "file": "agents/catalog/memia-sprint-prioritizer.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Structures Sprint Prioritizer and returns a product frame with problem, users, options, metrics and decisions."
+    },
+    {
+      "id": "memia-churn-autopsy",
+      "name": "MEMIA Churn Autopsy",
+      "category": "Product",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Analyse l’analyse du churn et fournit un cadrage produit avec problème, utilisateurs, options, métriques et décisions.",
+      "tags": [
+        "product",
+        "churn",
+        "autopsy"
+      ],
+      "file": "agents/catalog/memia-churn-autopsy.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Analyzes Churn Autopsy and returns a product frame with problem, users, options, metrics and decisions."
+    },
+    {
+      "id": "memia-behavioral-nudge-engine",
+      "name": "MEMIA Behavioral Nudge Engine",
+      "category": "Product",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Aide à cadrer les nudges comportementaux et fournit un cadrage produit avec problème, utilisateurs, options, métriques et décisions.",
+      "tags": [
+        "product",
+        "behavioral",
+        "nudge",
+        "engine"
+      ],
+      "file": "agents/catalog/memia-behavioral-nudge-engine.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Helps frame Behavioral Nudge Engine and returns a product frame with problem, users, options, metrics and decisions."
+    },
+    {
+      "id": "memia-senior-project-manager",
+      "name": "MEMIA Senior Project Manager",
+      "category": "Project Management",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Structure le pilotage de projet senior et fournit un pilotage de projet avec état, dépendances, risques, arbitrages et prochaines actions.",
+      "tags": [
+        "project-management",
+        "senior",
+        "project",
+        "manager"
+      ],
+      "file": "agents/catalog/memia-senior-project-manager.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Structures Senior Project Manager and returns project steering with status, dependencies, risks, trade-offs and next actions."
+    },
+    {
+      "id": "memia-project-shepherd",
+      "name": "MEMIA Project Shepherd",
+      "category": "Project Management",
+      "kind": "catalog",
+      "status": "included",
+      "default_enabled": true,
+      "summary": "Structure l’accompagnement de projet et fournit un pilotage de projet avec état, dépendances, risques, arbitrages et prochaines actions.",
+      "tags": [
+        "project-management",
+        "project",
+        "shepherd"
+      ],
+      "file": "agents/catalog/memia-project-shepherd.md",
+      "copyright": "Copyright (c) 2026 Kairros",
+      "summary_en": "Structures Project Shepherd and returns project steering with status, dependencies, risks, trade-offs and next actions."
+    }
+  ],
+  "catalog": {
+    "core_agents": 12,
+    "specialist_agents": 200,
+    "total_agents": 212
+  }
+}

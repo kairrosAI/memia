@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MEMIA BPOS English guide</title>
+  <meta name="description" content="English MEMIA BPOS guide: daily operating mode, projects, captures, connectors, agents, MCP, security and distribution.">
+  <link rel="canonical" href="https://memia.ai/guides/en/">
+  <meta property="og:title" content="MEMIA BPOS English guide">
+  <meta property="og:description" content="The public guide to install and operate MEMIA BPOS.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://memia.ai/guides/en/">
+  <meta property="og:image" content="https://memia.ai/assets/logos/memia-logo-horizontal.png">
+  <link rel="icon" type="image/png" href="/assets/logos/memia-favicon.png">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="/" aria-label="MEMIA BPOS">
+        <img src="/assets/logos/memia-logo-horizontal.png" alt="MEMIA">
+        <span class="brand-badge">BPOS</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="/install/">Install</a>
+        <a href="/agents/">Agents</a>
+        <a href="/connectors/">Connectors</a>
+        <a href="/security/">Security</a>
+        <a href="/docs/" aria-current="page">Docs</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="eyebrow">English guide</p>
+        <h1>How MEMIA BPOS works.</h1>
+        <p class="lead">This guide summarizes the daily operating mode: install, launch a project, capture a signal, update memory, connect surfaces, use agents and keep control.</p>
+      </div>
+    </section>
+
+    <section class="section tight">
+      <div class="wrap split">
+        <aside class="card">
+          <h3>Contents</h3>
+          <ul>
+            <li><a href="#install">Install</a></li>
+            <li><a href="#daily">Daily operating mode</a></li>
+            <li><a href="#project">Launch a project</a></li>
+            <li><a href="#captures">Captures</a></li>
+            <li><a href="#surfaces">Surfaces</a></li>
+            <li><a href="#agents">Agents</a></li>
+            <li><a href="#security">Security</a></li>
+            <li><a href="#distribution">Distribution</a></li>
+          </ul>
+        </aside>
+        <article class="content">
+          <h2 id="install">Install</h2>
+          <p>The nominal path uses npm once the package is published. Before npm publication, GitHub and ZIP remain the distribution paths.</p>
+          <div class="terminal">npx @kairros/memia bootstrap ./MEMIA --git --obsidian
+cd MEMIA
+memia status</div>
+
+          <h2 id="daily">Daily operating mode</h2>
+          <p>The natural mode is conversational. The user asks an AI assistant to work inside MEMIA. Commands are used to verify, automate and integrate.</p>
+          <div class="terminal">Launch a MEMIA project for this initiative.
+Create the structure, record decisions, prepare the handover and propose the next action.
+
+Then update MEMIA memory with the decisions we just made.</div>
+
+          <h2 id="project">Launch a project</h2>
+          <p>A MEMIA project should contain a goal, context, decisions, risks, resources and a handover. It should be resumable by another person or another AI session.</p>
+          <ul>
+            <li>Create the project.</li>
+            <li>Capture useful context.</li>
+            <li>Identify initial decisions.</li>
+            <li>Add next actions.</li>
+            <li>Prepare the handover.</li>
+          </ul>
+
+          <h2 id="captures">Captures</h2>
+          <p>A capture is a signal not to lose. It can come from an idea, meeting, email, message, file or webhook. It should be qualified before it is routed.</p>
+          <div class="terminal">memia new capture "Important signal"
+memia capture surface gmail "Email to qualify"
+memia capture surface whatsapp "Message to process"</div>
+
+          <h2 id="surfaces">Surfaces</h2>
+          <p>Surfaces are where signals arrive: Gmail, WhatsApp, calendars, meetings, files, Drive, SharePoint, webhooks or business tools. A surface should not become unlimited permission. It reads, captures, routes and prepares under explicit rules.</p>
+          <div class="terminal">memia surfaces init
+memia surfaces list
+memia surfaces whatsapp qr</div>
+
+          <h2 id="agents">Agents</h2>
+          <p>MEMIA agents frame the work. Core agents apply the system. The board challenges decisions. Specialized agents cover business domains.</p>
+          <div class="terminal">memia agents list
+memia agents list board
+memia agents show memia-project-steward</div>
+
+          <h2 id="security">Security</h2>
+          <p>MEMIA BPOS follows a local-first model. Secrets are not versioned. Sensitive external actions require explicit approval: sending, publishing, deleting, sharing, paying or signing.</p>
+
+          <h2 id="distribution">Distribution</h2>
+          <p>GitHub publishes the source. npm enables `npx`. ZIP supports standalone distribution. Homebrew can follow. The `memia.ai` website must serve only the static `site/` folder.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <strong>MEMIA BPOS</strong><br>
+        <span>Copyright © 2026 Kairros.</span>
+      </div>
+      <div class="footer-links">
+        <a href="/docs/">Docs</a>
+        <a href="/guides/fr/">Guide FR</a>
+        <a href="/install/">Install</a>
+      </div>
+    </div>
+  </footer>
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>

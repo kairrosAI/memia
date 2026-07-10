@@ -1,0 +1,87 @@
+{
+  "name": "@kairros/memia",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "MEMIA BPOS gives AI assistants a local-first working memory for projects, decisions, captures, agents and connectors.",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "author": "Kairros",
+  "homepage": "https://github.com/kairrosAI/memia#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kairrosAI/memia.git"
+  },
+  "keywords": [
+    "memia",
+    "bpos",
+    "business-operating-system",
+    "personal-operating-system",
+    "ipcrwa",
+    "knowledge-management",
+    "agent-os",
+    "obsidian",
+    "mcp"
+  ],
+  "bin": {
+    "memia": "./bin/memia.mjs"
+  },
+  "scripts": {
+    "setup": "bash scripts/bootstrap.sh",
+    "audit:clean": "bash scripts/audit-clean.sh",
+    "tree": "find . -maxdepth 3 -type d | sort",
+    "memia": "node bin/memia.mjs",
+    "memia:in": "node bin/memia.mjs in",
+    "memia:out": "node bin/memia.mjs out",
+    "memia:status": "node bin/memia.mjs status",
+    "memia:doctor": "node bin/memia.mjs doctor",
+    "memia:agents": "node bin/memia.mjs agents list",
+    "mcp": "node mcp/server.mjs",
+    "connector": "node connectors/runtime/cli.mjs",
+    "connector:list": "node connectors/runtime/cli.mjs list",
+    "audit:forbidden": "node scripts/audit-forbidden.mjs",
+    "site:check": "node scripts/site-check.mjs",
+    "site:preview": "node scripts/site-preview.mjs"
+  },
+  "files": [
+    ".env.example",
+    ".gitignore",
+    "00 - Inbox",
+    "01 - Projets",
+    "02 - Comptes - Run",
+    "03 - Ressources & Assets",
+    "04 - Workspaces",
+    "05 - Archives",
+    "_memia",
+    "adapters",
+    "agents",
+    "bin",
+    "connectors",
+    "docs",
+    "governance",
+    "html",
+    "mcp",
+    "scripts",
+    "site",
+    "templates",
+    "BRAND.md",
+    "CONTENT-LICENSE.md",
+    "CONTRIBUTING.md",
+    "INSTALLATION.md",
+    "LICENSE",
+    "LICENSE.md",
+    "NOTICE",
+    "OPERATING-MODE.md",
+    "README.md",
+    "SECURITY.md",
+    "STRUCTURE.md",
+    "TRADEMARKS.md"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "qrcode-terminal": "^0.12.0",
+    "zod": "^4.4.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

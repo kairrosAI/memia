@@ -1,0 +1,35 @@
+# Environnements locaux
+.env
+.env.*
+!.env.example
+
+# Dépendances et builds
+node_modules/
+dist/
+build/
+.cache/
+coverage/
+
+# Caches d'outils
+.codex/
+.claude/
+.cursor/
+.venv/
+__pycache__/
+
+# Système
+.DS_Store
+Thumbs.db
+
+# Logs et états locaux
+*.log
+connectors/*.local.json
+_memia/logs/**/*.jsonl
+_memia/logs/**/*.log
+_memia/runtime/**
+!_memia/runtime/.gitkeep
+
+# Archives générées
+*.zip
+*.tar
+*.tar.gz

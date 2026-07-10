@@ -1,0 +1,117 @@
+schema: memia.connectors.native.v1
+updatedAt: 2026-07-09
+principles:
+  - Native verified means a real adapter ships in this package and its probe runs out of the box with no private infrastructure.
+  - Only truly generic connectors are verified here. Every branded surface lives in scaffold-connectors.yaml.
+  - Secrets are referenced only by secretRef (env, keychain or vault), never stored in Git.
+  - Read-only and dry-run first are the defaults. L5 actions are blocked without explicit human approval.
+connectors:
+  - id: local-files
+    name: Local files
+    family: files-knowledge
+    supportLevel: native
+    implementationStatus: verified
+    adapter:
+      type: filesystem_capture
+      module: adapters/local-files.mjs
+      configHint: Point config.path at a folder to scan for capture files.
+    capabilities:
+      read:
+        - folder_files
+        - file_metadata
+      write:
+        - routed_capture
+      forbidden:
+        - delete_source_without_approval
+        - external_share
+    sync:
+      mode: on_demand
+      dryRunFirst: true
+    governance:
+      defaultMode: read_only
+      l5RequiresApproval: true
+      auditLog: true
+
+  - id: generic-webhook
+    name: Generic webhook
+    family: automation-api
+    supportLevel: native
+    implementationStatus: verified
+    adapter:
+      type: webhook
+      module: adapters/generic-webhook.mjs
+      configHint: Declares an inbound HTTP contract and a generated ingest path. No server is started by probe.
+    auth:
+      secretRef: env://MEMIA_CONNECTOR_WEBHOOK_SECRET
+    capabilities:
+      read:
+        - inbound_event
+      write:
+        - capture_event
+      forbidden:
+        - outbound_request
+        - external_side_effect
+    sync:
+      mode: event_driven
+      dryRunFirst: false
+    governance:
+      defaultMode: receive_only
+      l5RequiresApproval: true
+      auditLog: true
+
+  - id: generic-rest
+    name: Generic REST
+    family: automation-api
+    supportLevel: native
+    implementationStatus: verified
+    adapter:
+      type: rest
+      module: adapters/generic-rest.mjs
+      configHint: Point config.url at a public read-only JSON endpoint. Probe performs a real GET.
+    auth:
+      secretRef: env://MEMIA_CONNECTOR_REST_TOKEN
+    capabilities:
+      read:
+        - records
+      write:
+        - proposed_capture
+      forbidden:
+        - write_request
+        - delete_record
+        - change_permissions
+    sync:
+      mode: scheduled
+      defaultFrequency: daily
+      dryRunFirst: true
+    governance:
+      defaultMode: read_only
+      l5RequiresApproval: true
+      auditLog: true
+
+  - id: generic-mcp
+    name: Generic MCP
+    family: automation-api
+    supportLevel: native
+    implementationStatus: verified
+    adapter:
+      type: mcp
+      module: adapters/generic-mcp.mjs
+      configHint: Point config.endpoint at an MCP server. Probe validates config and reports reachability without hard-failing.
+    auth:
+      secretRef: env://MEMIA_CONNECTOR_MCP_TOKEN
+    capabilities:
+      read:
+        - items
+        - search_results
+      write:
+        - proposed_capture
+      forbidden:
+        - destructive_tool
+        - send_external_message
+    sync:
+      mode: manual_or_scheduled
+      dryRunFirst: true
+    governance:
+      defaultMode: read_only
+      l5RequiresApproval: true
+      auditLog: true

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guide MEMIA BPOS en français</title>
+  <meta name="description" content="Guide français MEMIA BPOS : méthode quotidienne, projets, captures, connecteurs, agents, MCP, sécurité et distribution.">
+  <link rel="canonical" href="https://memia.ai/guides/fr/">
+  <meta property="og:title" content="Guide MEMIA BPOS en français">
+  <meta property="og:description" content="Le guide public pour installer et opérer MEMIA BPOS.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://memia.ai/guides/fr/">
+  <meta property="og:image" content="https://memia.ai/assets/logos/memia-logo-horizontal.png">
+  <link rel="icon" type="image/png" href="/assets/logos/memia-favicon.png">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="/" aria-label="MEMIA BPOS">
+        <img src="/assets/logos/memia-logo-horizontal.png" alt="MEMIA">
+        <span class="brand-badge">BPOS</span>
+      </a>
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="/install/">Installer</a>
+        <a href="/agents/">Agents</a>
+        <a href="/connectors/">Connecteurs</a>
+        <a href="/security/">Sécurité</a>
+        <a href="/docs/" aria-current="page">Docs</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="eyebrow">Guide français</p>
+        <h1>Mode de fonctionnement MEMIA BPOS.</h1>
+        <p class="lead">Ce guide résume le fonctionnement quotidien : installer, lancer un projet, capturer un signal, mettre à jour la mémoire, brancher des surfaces, utiliser les agents et garder le contrôle.</p>
+      </div>
+    </section>
+
+    <section class="section tight">
+      <div class="wrap split">
+        <aside class="card">
+          <h3>Sommaire</h3>
+          <ul>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#quotidien">Fonctionnement quotidien</a></li>
+            <li><a href="#projet">Lancer un projet</a></li>
+            <li><a href="#captures">Captures</a></li>
+            <li><a href="#surfaces">Surfaces</a></li>
+            <li><a href="#agents">Agents</a></li>
+            <li><a href="#securite">Sécurité</a></li>
+            <li><a href="#distribution">Distribution</a></li>
+          </ul>
+        </aside>
+        <article class="content">
+          <h2 id="installation">Installation</h2>
+          <p>Le chemin nominal passe par npm une fois le package publié. Avant publication npm, GitHub et ZIP restent les chemins de distribution.</p>
+          <div class="terminal">npx @kairros/memia bootstrap ./MEMIA --git --obsidian
+cd MEMIA
+memia status</div>
+
+          <h2 id="quotidien">Fonctionnement quotidien</h2>
+          <p>Le mode naturel est conversationnel. L’utilisateur parle à son assistant IA et lui demande de travailler dans MEMIA. Les commandes servent à vérifier, automatiser et intégrer.</p>
+          <div class="terminal">Lance un projet MEMIA pour préparer ce sujet.
+Crée la structure, note les décisions, prépare le handover et propose la prochaine action.
+
+Mets ensuite à jour la mémoire MEMIA avec les décisions prises.</div>
+
+          <h2 id="projet">Lancer un projet</h2>
+          <p>Un projet MEMIA doit contenir un objectif, un contexte, des décisions, des risques, des ressources et un handover. Il doit être reprenable par une autre personne ou une autre session IA.</p>
+          <ul>
+            <li>Créer le projet.</li>
+            <li>Capturer le contexte utile.</li>
+            <li>Identifier les décisions initiales.</li>
+            <li>Ajouter les prochaines actions.</li>
+            <li>Préparer le handover.</li>
+          </ul>
+
+          <h2 id="captures">Captures</h2>
+          <p>Une capture est un signal à ne pas perdre. Elle peut venir d’une idée, d’une réunion, d’un email, d’un message, d’un fichier ou d’un webhook. Elle doit être qualifiée avant d’être routée.</p>
+          <div class="terminal">memia new capture "Signal important"
+memia capture surface gmail "Email à qualifier"
+memia capture surface whatsapp "Message à traiter"</div>
+
+          <h2 id="surfaces">Surfaces</h2>
+          <p>Les surfaces sont les endroits où arrivent les signaux : Gmail, WhatsApp, calendriers, réunions, fichiers, Drive, SharePoint, webhooks ou outils métier. Une surface ne doit pas devenir une permission illimitée. Elle lit, capture, route et prépare selon des règles explicites.</p>
+          <div class="terminal">memia surfaces init
+memia surfaces list
+memia surfaces whatsapp qr</div>
+
+          <h2 id="agents">Agents</h2>
+          <p>Les agents MEMIA cadrent le travail. Les agents cœur appliquent le système. Le board challenge les décisions. Les agents spécialisés couvrent les domaines métier.</p>
+          <div class="terminal">memia agents list
+memia agents list board
+memia agents show memia-project-steward</div>
+
+          <h2 id="securite">Sécurité</h2>
+          <p>MEMIA BPOS suit une logique local-first. Les secrets ne sont pas versionnés. Les actions externes sensibles demandent une validation explicite : envoi, publication, suppression, partage, paiement ou signature.</p>
+
+          <h2 id="distribution">Distribution</h2>
+          <p>Le dépôt GitHub publie les sources. npm rend `npx` disponible. ZIP permet une distribution autonome. Homebrew peut suivre. Le site `memia.ai` doit publier uniquement le dossier statique `site/`.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <strong>MEMIA BPOS</strong><br>
+        <span>Copyright © 2026 Kairros.</span>
+      </div>
+      <div class="footer-links">
+        <a href="/docs/">Docs</a>
+        <a href="/guides/en/">English guide</a>
+        <a href="/install/">Installer</a>
+      </div>
+    </div>
+  </footer>
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>

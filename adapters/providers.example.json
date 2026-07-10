@@ -1,0 +1,32 @@
+{
+  "default": "manual",
+  "providers": {
+    "manual": {
+      "enabled": true,
+      "description": "No LLM provider. Use MEMIA as a local operating system with templates and CLI."
+    },
+    "claude": {
+      "enabled": false,
+      "command": "claude",
+      "env": "ANTHROPIC_API_KEY",
+      "description": "Claude adapter. Provide credentials through the local environment."
+    },
+    "cursor": {
+      "enabled": false,
+      "command": "cursor",
+      "description": "Cursor adapter for codebase work. Uses the user's local Cursor setup."
+    },
+    "codex": {
+      "enabled": false,
+      "command": "codex",
+      "description": "Codex adapter for development workflows. Uses the user's local Codex setup."
+    },
+    "opencode": {
+      "enabled": false,
+      "command": "opencode",
+      "env": "OPENCODE_API_KEY",
+      "description": "OpenCode adapter. Install and configure separately, then provide credentials locally."
+    }
+  }
+}
+

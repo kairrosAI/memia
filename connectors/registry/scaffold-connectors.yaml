@@ -1,0 +1,788 @@
+schema: memia.connectors.scaffold.v1
+updatedAt: 2026-07-09
+statusRule: Scaffolded means this package ships the connector contract, auth model, endpoints, MEMIA mappings and safety rules, but no verified adapter runs out of the box. It becomes verified only when a real adapter plus probe and dry-run pass with the user credentials.
+defaultGovernance:
+  defaultMode: read_only
+  dryRunFirst: true
+  l5RequiresApproval: true
+  auditLog: true
+  secretsPolicy: secret_ref_only
+publicProbe: config_presence
+connectors:
+  - id: notion
+    name: Notion
+    family: files-knowledge
+    supportLevel: native
+    implementationStatus: scaffolded
+    adapter:
+      type: rest
+      auth: oauth_or_internal_integration_token
+      baseUrl: https://api.notion.com/v1
+      secretRef: keychain://memia/connectors/notion
+    reads:
+      - pages
+      - databases
+      - blocks
+      - comments
+    writes:
+      - proposed_page_update
+      - proposed_database_item
+    mapping:
+      page: memia.capture.document
+      database: memia.capture.structured_collection
+      database_item: memia.capture.structured_record
+      block: memia.capture.document_block
+    conditionsToVerify:
+      - Provide an OAuth or integration token as a secretRef.
+      - Ship a probe on the search endpoint and a pages sample.
+      - Ship a block-to-markdown normalizer and a dry-run import.
+    nextProbeCommand: memia connector probe notion
+
+  - id: slack
+    name: Slack
+    family: communication
+    supportLevel: gateway
+    implementationStatus: scaffolded
+    adapter:
+      type: rest_or_mcp
+      auth: oauth_or_bot_token
+      baseUrl: https://slack.com/api
+      secretRef: keychain://memia/connectors/slack
+    reads:
+      - channels
+      - messages
+      - threads
+      - files_metadata
+    writes:
+      - proposed_reply
+      - proposed_channel_summary
+    mapping:
+      channel: memia.capture.communication_space
+      message: memia.capture.message
+      thread: memia.capture.decision_thread
+      file: memia.capture.attachment_reference
+    conditionsToVerify:
+      - Install a workspace OAuth app and store the token as a secretRef.
+      - Ship a channel-list probe, a thread sample and a read-only dry-run.
+      - Keep every send behind the L5 approval guard.
+    nextProbeCommand: memia connector probe slack
+
+  - id: github
+    name: GitHub
+    family: product-engineering
+    supportLevel: gateway
+    implementationStatus: scaffolded
+    adapter:
+      type: rest_or_mcp
+      auth: github_app_or_pat_or_oauth
+      baseUrl: https://api.github.com
+      secretRef: keychain://memia/connectors/github
+    reads:
+      - repositories
+      - issues
+      - pull_requests
+      - reviews
+      - comments
+    writes:
+      - proposed_issue_comment
+      - proposed_pr_summary
+    mapping:
+      issue: memia.project.issue
+      pull_request: memia.project.technical_decision
+      review: memia.capture.review_feedback
+    conditionsToVerify:
+      - Provide a GitHub App or fine-grained token as a secretRef.
+      - Ship a repo probe, an issues sample and a PR sample.
+      - Ship a dry-run handover before any write.
+    nextProbeCommand: memia connector probe github
+
+  - id: gitlab
+    name: GitLab
+    family: product-engineering
+    supportLevel: gateway
+    implementationStatus: scaffolded
+    adapter:
+      type: rest
+      auth: oauth_or_personal_access_token
+      baseUrl: https://gitlab.com/api/v4
+      secretRef: keychain://memia/connectors/gitlab
+    reads:
+      - projects
+      - issues
+      - merge_requests
+      - comments
+    writes:
+      - proposed_issue_comment
+      - proposed_merge_request_summary
+    mapping:
+      project: memia.project.technical_workspace
+      issue: memia.project.issue
+      merge_request: memia.project.technical_decision
+      comment: memia.capture.comment
+    conditionsToVerify:
+      - Provide an OAuth or personal access token as a secretRef.
+      - Ship a project probe and issue and merge-request samples.
+      - Ship a dry-run status summary.
+    nextProbeCommand: memia connector probe gitlab
+
+  - id: google-drive
+    name: Google Drive
+    family: files-knowledge
+    supportLevel: gateway
+    implementationStatus: scaffolded
+    adapter:
+      type: rest
+      auth: oauth
+      baseUrl: https://www.googleapis.com/drive/v3
+      secretRef: keychain://memia/connectors/google-drive
+    reads:
+      - files
+      - folders
+      - comments
+      - permissions_metadata
+    writes:
+      - proposed_file_route
+    mapping:
+      file: memia.capture.document_reference
+      folder: memia.capture.collection
+      comment: memia.capture.comment
+    conditionsToVerify:
+      - Validate OAuth scopes and store the token as a secretRef.
+      - Ship a file-list probe and a metadata sample with a permission read guard.
+      - Ship a dry-run routing step.
+    nextProbeCommand: memia connector probe google-drive
+
+  - id: onedrive-sharepoint
+    name: OneDrive / SharePoint
+    family: files-knowledge
+    supportLevel: gateway
+    implementationStatus: scaffolded
+    adapter:
+      type: microsoft_graph
+      auth: delegated_oauth
+      baseUrl: https://graph.microsoft.com/v1.0
+      secretRef: keychain://memia/connectors/microsoft-graph
+    reads:
+      - drives
+      - drive_items
+      - sites
+      - lists
+      - permissions_metadata
+    writes:
+      - proposed_file_route
+    mapping:
+      drive_item: memia.capture.document_reference
+      site: memia.capture.knowledge_space
+      list_item: memia.capture.structured_record
+    conditionsToVerify:
+      - Provide delegated Graph consent and store the token as a secretRef.
+      - Ship a drive probe and SharePoint site and drive-item samples.
+      - Ship a dry-run routing step.
+    nextProbeCommand: memia connector probe onedrive-sharepoint
+
+  - id: salesforce
+    name: Salesforce
+    family: crm-sales
+    supportLevel: gateway
+    implementationStatus: scaffolded
+    adapter:
+      type: rest
+      auth: oauth
+      baseUrl: instance_url
+      secretRef: keychain://memia/connectors/salesforce
+    reads:
+      - accounts
+      - contacts
+      - opportunities
+      - tasks
+      - notes
+    writes:
+      - proposed_task
+      - proposed_note
+    mapping:
+      account: memia.contact.organization
+      contact: memia.contact.person
+      opportunity: memia.project.sales_opportunity
+      task: memia.action.proposed
+    conditionsToVerify:
+      - Install an OAuth app and discover the instance URL.
+      - Ship a SOQL sample and an opportunity mapping.
+      - Keep CRM writes behind the L5 approval guard.
+    nextProbeCommand: memia connector probe salesforce
+
+  - id: hubspot
+    name: HubSpot
+    family: crm-sales
+    supportLevel: gateway
+    implementationStatus: scaffolded
+    adapter:
+      type: rest
+      auth: oauth_or_private_app_token
+      baseUrl: https://api.hubapi.com
+      secretRef: keychain://memia/connectors/hubspot
+    reads:
+      - companies
+      - contacts
+      - deals
+      - tickets
+      - notes
+    writes:
+      - proposed_task
+      - proposed_note
+    mapping:
+      company: memia.contact.organization
+      contact: memia.contact.person
+      deal: memia.project.sales_opportunity
+      ticket: memia.capture.customer_issue
+    conditionsToVerify:
+      - Provide an OAuth or private app token as a secretRef.
+      - Ship an objects probe, a deal sample and an association mapping.
+      - Keep writes behind the L5 approval guard.
+    nextProbeCommand: memia connector probe hubspot
+
+  - id: airtable
+    name: Airtable
+    family: crm-sales
+    supportLevel: gateway
+    implementationStatus: scaffolded
+    adapter:
+      type: rest
+      auth: personal_access_token_or_oauth
+      baseUrl: https://api.airtable.com/v0
+      secretRef: keychain://memia/connectors/airtable
+    reads:
+      - bases
+      - tables
+      - records
+    writes:
+      - proposed_record_update
+    mapping:
+      base: memia.capture.structured_collection
+      table: memia.capture.collection
+      record: memia.capture.structured_record
+    conditionsToVerify:
+      - Provide a personal access token as a secretRef and select a base.
+      - Ship a schema sample and a records sample.
+      - Add a field mapping step before any write.
+    nextProbeCommand: memia connector probe airtable
+
+  - id: pipedrive
+    name: Pipedrive
+    family: crm-sales
+    supportLevel: gateway
+    implementationStatus: scaffolded
+    adapter:
+      type: rest
+      auth: api_token_or_oauth
+      baseUrl: https://api.pipedrive.com/v1
+      secretRef: keychain://memia/connectors/pipedrive
+    reads:
+      - persons
+      - organizations
+      - deals
+      - activities
+    writes:
+      - proposed_activity
+    mapping:
+      person: memia.contact.person
+      organization: memia.contact.organization
+      deal: memia.project.sales_opportunity
+      activity: memia.action.proposed
+    conditionsToVerify:
+      - Provide an API token as a secretRef.
+      - Ship deals and activities samples.
+      - Ship a dry-run action proposal.
+    nextProbeCommand: memia connector probe pipedrive
+
+  - id: jira
+    name: Jira
+    family: product-engineering
+    supportLevel: gateway
+    implementationStatus: scaffolded
+    adapter:
+      type: rest
+      auth: oauth_or_api_token
+      baseUrl: https://your-domain.atlassian.net/rest/api/3
+      secretRef: keychain://memia/connectors/jira
+    reads:
+      - projects
+      - issues
+      - comments
+      - sprints
+    writes:
+      - proposed_issue_comment
+    mapping:
+      issue: memia.project.issue
+      comment: memia.capture.comment
+      sprint: memia.project.iteration
+    conditionsToVerify:
+      - Discover the cloud ID and store the token as a secretRef.
+      - Ship a project probe and an issue sample.
+      - Ship a dry-run sprint handover.
+    nextProbeCommand: memia connector probe jira
+
+  - id: linear
+    name: Linear
+    family: product-engineering
+    supportLevel: gateway
+    implementationStatus: scaffolded
+    adapter:
+      type: graphql
+      auth: api_key_or_oauth
+      baseUrl: https://api.linear.app/graphql
+      secretRef: keychain://memia/connectors/linear
+    reads:
+      - teams
+      - issues
+      - cycles
+      - projects
+    writes:
+      - proposed_issue_comment
+    mapping:
+      issue: memia.project.issue
+      cycle: memia.project.iteration
+      project: memia.project.product_work
+    conditionsToVerify:
+      - Provide an API key as a secretRef.
+      - Ship a viewer probe and issue and cycle samples.
+      - Ship a dry-run status summary.
+    nextProbeCommand: memia connector probe linear
+
+  - id: asana
+    name: Asana
+    family: product-engineering
+    supportLevel: gateway
+    implementationStatus: scaffolded
+    adapter:
+      type: rest
+      auth: oauth_or_personal_access_token
+      baseUrl: https://app.asana.com/api/1.0
+      secretRef: keychain://memia/connectors/asana
+    reads:
+      - workspaces
+      - projects
+      - tasks
+      - comments
+    writes:
+      - proposed_task_comment
+    mapping:
+      task: memia.action.project_task
+      project: memia.project.workspace
+      comment: memia.capture.comment
+    conditionsToVerify:
+      - Provide a token as a secretRef and probe the workspace.
+      - Ship project and task samples.
+      - Ship a dry-run handover.
+    nextProbeCommand: memia connector probe asana
+
+  - id: zoom
+    name: Zoom
+    family: calendar-meetings
+    supportLevel: gateway
+    implementationStatus: scaffolded
+    adapter:
+      type: rest
+      auth: oauth_or_server_to_server_oauth
+      baseUrl: https://api.zoom.us/v2
+      secretRef: keychain://memia/connectors/zoom
+    reads:
+      - meetings
+      - recordings_metadata
+      - transcripts_metadata
+    writes:
+      - proposed_meeting_brief
+    mapping:
+      meeting: memia.capture.meeting
+      recording: memia.capture.media_reference
+      transcript: memia.capture.transcript
+    conditionsToVerify:
+      - Install an OAuth app and store the token as a secretRef.
+      - Ship a meetings probe and a recording metadata sample.
+      - Ship a transcript import path.
+    nextProbeCommand: memia connector probe zoom
+
+  - id: google-meet
+    name: Google Meet
+    family: calendar-meetings
+    supportLevel: gateway
+    implementationStatus: scaffolded
+    adapter:
+      type: rest
+      auth: google_oauth
+      baseUrl: https://meet.googleapis.com/v2
+      secretRef: keychain://memia/connectors/google-meet
+    reads:
+      - conference_records
+      - participants
+      - recordings_metadata
+      - transcripts_metadata
+    writes:
+      - proposed_meeting_brief
+    mapping:
+      conference_record: memia.capture.meeting
+      participant: memia.capture.meeting_participant
+      recording: memia.capture.media_reference
+      transcript: memia.capture.transcript
+    conditionsToVerify:
+      - Provide Google OAuth consent and store the token as a secretRef.
+      - Ship a conference-records probe and participant and transcript samples.
+      - Ship a dry-run meeting brief.
+    nextProbeCommand: memia connector probe google-meet
+
+  - id: microsoft-teams
+    name: Microsoft Teams
+    family: communication
+    supportLevel: gateway
+    implementationStatus: scaffolded
+    adapter:
+      type: microsoft_graph
+      auth: delegated_oauth_or_application
+      baseUrl: https://graph.microsoft.com/v1.0
+      secretRef: keychain://memia/connectors/microsoft-graph
+    reads:
+      - teams
+      - channels
+      - channel_messages
+      - chats
+      - chat_messages
+    writes:
+      - proposed_channel_reply
+      - proposed_chat_reply
+    mapping:
+      team: memia.capture.communication_space
+      channel: memia.capture.communication_channel
+      channel_message: memia.capture.message
+      chat_message: memia.capture.message
+    conditionsToVerify:
+      - Provide delegated Graph consent and store the token as a secretRef.
+      - Ship a joined-teams probe and channel and chat message samples.
+      - Keep every reply behind the L5 approval guard.
+    nextProbeCommand: memia connector probe microsoft-teams
+
+  - id: typeform
+    name: Typeform
+    family: automation-api
+    supportLevel: gateway
+    implementationStatus: scaffolded
+    adapter:
+      type: webhook_or_rest
+      auth: personal_token_or_webhook_secret
+      baseUrl: https://api.typeform.com
+      secretRef: keychain://memia/connectors/typeform
+    reads:
+      - forms
+      - responses
+      - webhook_events
+    writes:
+      - capture_response
+    mapping:
+      response: memia.capture.form_response
+      webhook_event: memia.capture.signal
+    conditionsToVerify:
+      - Provide a personal token or webhook secret as a secretRef.
+      - Ship a form probe and webhook signature validation.
+      - Ship a response sample and a dry-run capture.
+    nextProbeCommand: memia connector probe typeform
+
+  - id: rss
+    name: RSS / Atom
+    family: automation-api
+    supportLevel: gateway
+    implementationStatus: scaffolded
+    adapter:
+      type: feed
+      auth: none_or_basic
+      baseUrl: feed_url
+      secretRef: optional
+    reads:
+      - feed_items
+    writes:
+      - capture_item
+    mapping:
+      feed_item: memia.capture.external_signal
+    conditionsToVerify:
+      - Ship a feed parser and a URL probe.
+      - Ship a sample items step and a dedupe store.
+      - Ship a dry-run capture. RSS is the first native candidate for promotion.
+    nextProbeCommand: memia connector probe rss
+
+  - id: zapier
+    name: Zapier
+    family: automation-api
+    supportLevel: gateway
+    implementationStatus: scaffolded
+    adapter:
+      type: webhook
+      auth: shared_secret
+      baseUrl: memia_gateway_webhook_url
+      secretRef: keychain://memia/connectors/zapier-webhook
+    reads:
+      - webhook_events
+    writes:
+      - capture_event
+    mapping:
+      webhook_event: memia.capture.signal
+    conditionsToVerify:
+      - Generate an inbound URL and a shared secret as a secretRef.
+      - Map the payload and ship a dry-run capture.
+    nextProbeCommand: memia connector probe zapier
+
+  - id: make
+    name: Make
+    family: automation-api
+    supportLevel: gateway
+    implementationStatus: scaffolded
+    adapter:
+      type: webhook
+      auth: shared_secret
+      baseUrl: memia_gateway_webhook_url
+      secretRef: keychain://memia/connectors/make-webhook
+    reads:
+      - webhook_events
+    writes:
+      - capture_event
+    mapping:
+      webhook_event: memia.capture.signal
+    conditionsToVerify:
+      - Generate an inbound URL and a shared secret as a secretRef.
+      - Map the payload and ship a dry-run capture.
+    nextProbeCommand: memia connector probe make
+
+  - id: n8n
+    name: n8n
+    family: automation-api
+    supportLevel: gateway
+    implementationStatus: scaffolded
+    adapter:
+      type: webhook_or_local_orchestrator
+      auth: shared_secret
+      baseUrl: memia_gateway_webhook_url
+      secretRef: keychain://memia/connectors/n8n-webhook
+    reads:
+      - workflow_events
+      - webhook_events
+    writes:
+      - capture_event
+    mapping:
+      workflow_event: memia.capture.signal
+      webhook_event: memia.capture.signal
+    conditionsToVerify:
+      - Generate an inbound URL and a shared secret as a secretRef.
+      - Map the payload and ship a dry-run capture.
+    nextProbeCommand: memia connector probe n8n
+
+  - id: whatsapp
+    name: WhatsApp
+    family: communication
+    supportLevel: gateway
+    implementationStatus: scaffolded
+    adapter:
+      type: local_bridge_or_cloud_api
+      auth: bridge_url_or_cloud_token
+      secretRef: env://MEMIA_WHATSAPP_TOKEN
+    reads:
+      - allowed_chats
+      - messages
+    writes:
+      - proposed_message
+    mapping:
+      message: memia.capture.message
+      chat: memia.capture.communication_space
+    conditionsToVerify:
+      - Run a compatible local bridge or the official Cloud API.
+      - Store the bridge URL or cloud token as a secretRef.
+      - Keep every outgoing message behind the L5 approval guard.
+    nextProbeCommand: memia connector probe whatsapp
+
+  - id: telegram
+    name: Telegram
+    family: communication
+    supportLevel: gateway
+    implementationStatus: scaffolded
+    adapter:
+      type: bot_or_user_api
+      auth: bot_token_or_user_session
+      secretRef: env://MEMIA_TELEGRAM_TOKEN
+    reads:
+      - chats
+      - messages
+    writes:
+      - proposed_message
+    mapping:
+      message: memia.capture.message
+      chat: memia.capture.communication_space
+    conditionsToVerify:
+      - Provide a bot token or a user session as a secretRef.
+      - Ship a chats probe and a dry-run scan.
+      - Keep every send behind the L5 approval guard.
+    nextProbeCommand: memia connector probe telegram
+
+  - id: discord
+    name: Discord
+    family: communication
+    supportLevel: gateway
+    implementationStatus: scaffolded
+    adapter:
+      type: bot_api
+      auth: bot_token
+      secretRef: env://MEMIA_DISCORD_TOKEN
+    reads:
+      - channels
+      - messages
+    writes:
+      - proposed_message
+    mapping:
+      message: memia.capture.message
+      channel: memia.capture.communication_channel
+    conditionsToVerify:
+      - Provide a bot token as a secretRef.
+      - Ship a channels probe and a dry-run scan.
+      - Keep every send behind the L5 approval guard.
+    nextProbeCommand: memia connector probe discord
+
+  - id: signal
+    name: Signal
+    family: communication
+    supportLevel: gateway
+    implementationStatus: scaffolded
+    adapter:
+      type: signal_cli
+      auth: linked_device
+      secretRef: env://MEMIA_SIGNAL_ACCOUNT
+    reads:
+      - messages
+    writes:
+      - proposed_message
+    mapping:
+      message: memia.capture.message
+    conditionsToVerify:
+      - Link a device through a local Signal CLI.
+      - Ship a receive probe and a dry-run scan.
+      - Keep every send behind the L5 approval guard.
+    nextProbeCommand: memia connector probe signal
+
+  - id: gmail-imap
+    name: Gmail (IMAP generic)
+    family: email
+    supportLevel: gateway
+    implementationStatus: scaffolded
+    adapter:
+      type: imap
+      auth: app_password_or_oauth
+      baseUrl: imap.gmail.com
+      secretRef: env://MEMIA_GMAIL_APP_PASSWORD
+    reads:
+      - inbox
+      - threads
+      - attachments_metadata
+    writes:
+      - draft_email
+    mapping:
+      thread: memia.capture.decision_thread
+      message: memia.capture.message
+      attachment: memia.capture.attachment_reference
+    conditionsToVerify:
+      - Provide an app password or OAuth token as a secretRef.
+      - Ship an IMAP probe and a read-only thread sample.
+      - Keep send, delete and label changes behind the L5 approval guard.
+    nextProbeCommand: memia connector probe gmail-imap
+
+  - id: outlook-graph
+    name: Outlook (Graph)
+    family: email
+    supportLevel: gateway
+    implementationStatus: scaffolded
+    adapter:
+      type: microsoft_graph
+      auth: delegated_oauth
+      baseUrl: https://graph.microsoft.com/v1.0
+      secretRef: keychain://memia/connectors/microsoft-graph
+    reads:
+      - inbox
+      - threads
+      - attachments_metadata
+    writes:
+      - draft_email
+    mapping:
+      thread: memia.capture.decision_thread
+      message: memia.capture.message
+      attachment: memia.capture.attachment_reference
+    conditionsToVerify:
+      - Provide delegated Graph consent and store the token as a secretRef.
+      - Ship a mailbox probe and a read-only thread sample.
+      - Keep send, delete and permission changes behind the L5 approval guard.
+    nextProbeCommand: memia connector probe outlook-graph
+
+  - id: microsoft-todo
+    name: Microsoft To Do
+    family: productivity
+    supportLevel: gateway
+    implementationStatus: scaffolded
+    adapter:
+      type: microsoft_graph
+      auth: delegated_oauth
+      baseUrl: https://graph.microsoft.com/v1.0
+      secretRef: keychain://memia/connectors/microsoft-graph
+    reads:
+      - task_lists
+      - tasks
+    writes:
+      - proposed_task
+    mapping:
+      task_list: memia.capture.collection
+      task: memia.action.proposed
+    conditionsToVerify:
+      - Provide delegated Graph consent and store the token as a secretRef.
+      - Ship a task-lists probe and a tasks sample.
+      - Keep task creation and deletion behind the L5 approval guard.
+    nextProbeCommand: memia connector probe microsoft-todo
+
+  - id: google-calendar
+    name: Google Calendar
+    family: calendar-meetings
+    supportLevel: gateway
+    implementationStatus: scaffolded
+    adapter:
+      type: rest
+      auth: google_oauth_readonly
+      baseUrl: https://www.googleapis.com/calendar/v3
+      secretRef: keychain://memia/connectors/google-calendar
+    reads:
+      - events
+      - attendees
+      - meeting_metadata
+    writes:
+      - proposed_calendar_action
+    mapping:
+      event: memia.capture.meeting
+      attendee: memia.capture.meeting_participant
+    conditionsToVerify:
+      - Provide read-only Google OAuth consent and store the token as a secretRef.
+      - Ship an events probe and an attendees sample.
+      - Keep event creation and updates behind the L5 approval guard.
+    nextProbeCommand: memia connector probe google-calendar
+
+  - id: outlook-calendar
+    name: Outlook Calendar
+    family: calendar-meetings
+    supportLevel: gateway
+    implementationStatus: scaffolded
+    adapter:
+      type: microsoft_graph
+      auth: delegated_oauth
+      baseUrl: https://graph.microsoft.com/v1.0
+      secretRef: keychain://memia/connectors/microsoft-graph
+    reads:
+      - events
+      - attendees
+      - meeting_metadata
+    writes:
+      - proposed_calendar_action
+    mapping:
+      event: memia.capture.meeting
+      attendee: memia.capture.meeting_participant
+    conditionsToVerify:
+      - Provide delegated Graph consent and store the token as a secretRef.
+      - Ship an events probe and an attendees sample.
+      - Keep event creation and updates behind the L5 approval guard.
+    nextProbeCommand: memia connector probe outlook-calendar

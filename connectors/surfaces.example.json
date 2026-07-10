@@ -1,0 +1,75 @@
+{
+  "product": "MEMIA BPOS",
+  "version": 1,
+  "principle": "Surfaces bring external signals into IPCRWA. Secrets stay in local environment variables. Captures land in 00 - Inbox/Surfaces before routing.",
+  "surfaces": [
+    {
+      "id": "gmail",
+      "label": "Gmail",
+      "type": "email",
+      "inbox": "00 - Inbox/Surfaces/Gmail",
+      "modes": ["oauth", "imap", "manual-export"],
+      "env": ["MEMIA_GMAIL_CLIENT_ID", "MEMIA_GMAIL_CLIENT_SECRET", "MEMIA_GMAIL_REFRESH_TOKEN"],
+      "captures": ["important emails", "threads to answer", "attachments to process", "commitments", "deadlines"],
+      "default_policy": "read-only until the user explicitly approves send, archive, delete or label changes"
+    },
+    {
+      "id": "whatsapp",
+      "label": "WhatsApp",
+      "type": "messaging",
+      "inbox": "00 - Inbox/Surfaces/WhatsApp",
+      "modes": ["local-bridge", "official-cloud-api", "manual-export"],
+      "env": ["MEMIA_WHATSAPP_BRIDGE_URL", "MEMIA_WHATSAPP_TOKEN"],
+      "captures": ["messages to process", "follow-ups", "voice-note summaries", "shared files", "time-sensitive signals"],
+      "default_policy": "read-only intake; no outgoing message without explicit human approval",
+      "bridge_contract": {
+        "health_endpoint": "/health",
+        "status_endpoint": "/session/status",
+        "qr_endpoints": ["/session/qr", "/qr", "/api/whatsapp/qr", "/whatsapp/qr"],
+        "accepted_qr_fields": ["qr", "qrText", "qr_code", "code", "payload", "dataUrl", "qrDataUrl", "image", "data.qr"],
+        "runtime_output": "_memia/runtime/surfaces/whatsapp/",
+        "send_policy": "blocked unless a human explicitly approves the exact outgoing message"
+      }
+    },
+    {
+      "id": "calendars",
+      "label": "Calendars",
+      "type": "calendar",
+      "inbox": "00 - Inbox/Surfaces/Calendars",
+      "modes": ["google-calendar", "microsoft-graph", "caldav", "ics"],
+      "env": ["MEMIA_CALENDAR_PROVIDER", "MEMIA_CALENDAR_TOKEN"],
+      "captures": ["meetings", "deadlines", "preparation needs", "travel windows", "recurring routines"],
+      "default_policy": "read-only by default; creating, moving or deleting events requires explicit approval"
+    },
+    {
+      "id": "meetings",
+      "label": "Meetings",
+      "type": "meeting",
+      "inbox": "00 - Inbox/Surfaces/Meetings",
+      "modes": ["transcript-import", "recording-summary", "manual-notes"],
+      "env": ["MEMIA_MEETING_SOURCE"],
+      "captures": ["decisions", "action items", "risks", "owners", "follow-up messages"],
+      "default_policy": "summaries and tasks can be drafted; external follow-ups require approval"
+    },
+    {
+      "id": "files",
+      "label": "Files and documents",
+      "type": "document",
+      "inbox": "00 - Inbox/Surfaces/Files",
+      "modes": ["local-folder", "google-drive", "onedrive", "dropbox", "manual-upload"],
+      "env": ["MEMIA_FILES_ROOT", "MEMIA_DRIVE_TOKEN"],
+      "captures": ["new documents", "contracts to review", "spreadsheets", "PDFs", "assets"],
+      "default_policy": "read and classify by default; sharing, deleting or moving external files requires approval"
+    },
+    {
+      "id": "signals",
+      "label": "Signals and webhooks",
+      "type": "event",
+      "inbox": "00 - Inbox/Surfaces/Signals",
+      "modes": ["webhook", "rss", "api-poll", "manual"],
+      "env": ["MEMIA_SIGNALS_WEBHOOK_SECRET", "MEMIA_SIGNALS_SOURCE_URL"],
+      "captures": ["alerts", "product events", "CRM changes", "payment notices", "system health"],
+      "default_policy": "intake and classification only; external mutations require approval"
+    }
+  ]
+}

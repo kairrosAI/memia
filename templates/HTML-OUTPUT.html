@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MEMIA - Livrable</title>
+  <style>
+    :root {
+      --bg: #F6F1EA;
+      --surface: #FFFFFF;
+      --ink: #23282F;
+      --ink-2: #3A3F47;
+      --ink-3: #5A6068;
+      --border: #ECE3D7;
+      --copper: #BC5E2E;
+      --copper-2: #FBF4EC;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Manrope, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+    main {
+      width: min(1040px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 24px 0 64px;
+    }
+    header, section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      margin: 0 0 16px;
+    }
+    h1, h2 { margin: 0 0 12px; line-height: 1.15; }
+    h1 { font-size: clamp(28px, 5vw, 42px); }
+    h2 { font-size: 22px; }
+    p { margin: 0 0 12px; }
+    .label {
+      color: var(--copper);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    code, pre {
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      overflow-wrap: anywhere;
+      white-space: pre-wrap;
+    }
+    pre {
+      background: var(--copper-2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="label">MEMIA</div>
+      <h1>Titre du livrable</h1>
+      <p>Résumé simple du contenu.</p>
+    </header>
+    <section>
+      <div class="label">Décision</div>
+      <h2>Ce qu'il faut retenir</h2>
+      <p>Remplacer par la synthèse utile.</p>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MEMIA BPOS — Tarifs</title>
+<meta name="description" content="MEMIA BPOS Community est gratuit et source-available. MEMIA Cloud arrive bientôt : tarifs indicatifs au lancement.">
+<link rel="icon" type="image/png" href="/assets/logos/memia-favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:#F6F1EA;color:#23282F;font-family:'Manrope',-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:#BC5E2E}
+  a:hover{color:#A94E22}
+  button{font-family:inherit;cursor:pointer}
+  @media (prefers-reduced-motion: reduce){ *{animation:none !important;transition:none !important} }
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+(function(){
+  "use strict";
+  var monogram = "/assets/logos/memia-monogram.png";
+  var content = {
+    fr: {
+      navProduit:'Produit', navConnecteurs:'Connecteurs', navAgents:'Agents', navSecurite:'Sécurité', navInstaller:'Installer localement', headerCta:'Créer mon espace',
+      eyebrow:'Tarifs',
+      h1:'Gratuit en local. Le confort en Cloud.',
+      lead:'Le cœur de MEMIA est source-available et s’auto-héberge gratuitement. MEMIA Cloud ajoute le sync toujours actif, les connecteurs managés et les approbations. Les tarifs Cloud sont indicatifs et confirmés à l’ouverture.',
+      perMo:'/mois', perUserMo:'/util./mois', forever:'Auto-hébergé, à vie.', indicativeSolo:'Indicatif · solo', indicativeTeam:'Indicatif · équipe', largeOrgs:'Grands comptes',
+      install:'Installer', joinWaitlist:'Rejoindre la waitlist', waitlist:'Waitlist', contact:'Nous contacter',
+      plans:[
+        {tag:'Community', price:'0&nbsp;€', sub:'Auto-hébergé, à vie.', feats:['Mémoire locale IPCRWA','CLI, MCP, Git, Obsidian','200+ agents','Connecteurs génériques + dry-run','Support communautaire'], cta:'install', href:'/#installer', featured:false},
+        {tag:'Cloud Starter', price:'~24&nbsp;€', unit:'/mois', sub:'Indicatif · solo', feats:['Espace hébergé (UE)','Sync toujours active','Connecteurs managés','Inbox d’approbations L5','Export complet'], cta:'joinWaitlist', href:'/cloud/', featured:true},
+        {tag:'Cloud Team', price:'~39&nbsp;€', unit:'/util./mois', sub:'Indicatif · équipe', feats:['Tout Starter, +','SSO (Entra / Google)','Rôles & droits fins','Journal d’audit','Multi-espaces'], cta:'waitlist', href:'/cloud/', featured:false},
+        {tag:'Enterprise', price:'Sur devis', sub:'Grands comptes', feats:['Isolation renforcée','DPA & résidence UE','Support dédié / SLA','Onboarding accompagné'], cta:'contact', href:'/cloud/', featured:false}
+      ],
+      notice:'Les tarifs Cloud sont des estimations non contractuelles. Ils seront confirmés à l’ouverture de MEMIA Cloud. Les premiers inscrits à la waitlist bénéficieront d’une offre de lancement.',
+      footerTagline:'MEMIA BPOS — Business & Personal Operating System', back:'Retour'
+    },
+    en: {
+      navProduit:'Product', navConnecteurs:'Connectors', navAgents:'Agents', navSecurite:'Security', navInstaller:'Install locally', headerCta:'Create my workspace',
+      eyebrow:'Pricing',
+      h1:'Free locally. Comfort in the Cloud.',
+      lead:'The core of MEMIA is source-available and self-hosts for free. MEMIA Cloud adds always-on sync, managed connectors and approvals. Cloud prices are indicative and confirmed at launch.',
+      perMo:'/mo', perUserMo:'/user/mo', forever:'Self-hosted, forever.', indicativeSolo:'Indicative · solo', indicativeTeam:'Indicative · team', largeOrgs:'Large orgs',
+      install:'Install', joinWaitlist:'Join the waitlist', waitlist:'Waitlist', contact:'Contact us',
+      plans:[
+        {tag:'Community', price:'0&nbsp;€', sub:'Self-hosted, forever.', feats:['Local IPCRWA memory','CLI, MCP, Git, Obsidian','200+ agents','Generic connectors + dry-run','Community support'], cta:'install', href:'/#installer', featured:false},
+        {tag:'Cloud Starter', price:'~24&nbsp;€', unit:'/mo', sub:'Indicative · solo', feats:['Hosted workspace (EU)','Always-on sync','Managed connectors','L5 approvals inbox','Full export'], cta:'joinWaitlist', href:'/cloud/', featured:true},
+        {tag:'Cloud Team', price:'~39&nbsp;€', unit:'/user/mo', sub:'Indicative · team', feats:['Everything in Starter, +','SSO (Entra / Google)','Roles & fine-grained rights','Audit log','Multi-workspace'], cta:'waitlist', href:'/cloud/', featured:false},
+        {tag:'Enterprise', price:'Custom', sub:'Large orgs', feats:['Hardened isolation','DPA & EU residency','Dedicated support / SLA','Guided onboarding'], cta:'contact', href:'/cloud/', featured:false}
+      ],
+      notice:'Cloud prices are non-binding estimates and will be confirmed when MEMIA Cloud opens. Early waitlist members will get a launch offer.',
+      footerTagline:'MEMIA BPOS — Business & Personal Operating System', back:'Home'
+    }
+  };
+  var state = { lang: (function(){ try { return localStorage.getItem('memia_lang'); } catch(e){ return null; } })() || 'fr' };
+
+  function header(t, L){
+    var frBg = L==='fr'?'#F6E5D7':'transparent', frColor = L==='fr'?'#A9713F':'#8A8170';
+    var enBg = L==='en'?'#F6E5D7':'transparent', enColor = L==='en'?'#A9713F':'#8A8170';
+    return '<header style="position:sticky;top:0;z-index:40;background:rgba(251,247,241,.9);backdrop-filter:blur(10px);border-bottom:1px solid #ECE3D7">'
+      + '<div style="max-width:1180px;margin:0 auto;padding:14px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px">'
+      + '<a href="/" style="display:flex;align-items:center;gap:11px;text-decoration:none"><img src="'+monogram+'" alt="MEMIA" style="height:32px;width:32px;display:block" /><span style="font:400 22px/1 \'Jost\',sans-serif;letter-spacing:.14em;color:#23282F">MEMIA</span><span style="font:700 10px/1 \'Manrope\';letter-spacing:.13em;color:#A9713F;background:#F6E5D7;padding:5px 9px;border-radius:6px">BPOS</span></a>'
+      + '<nav style="display:flex;flex-wrap:wrap;gap:20px;margin-left:8px">'
+      + '<a href="/#produit" style="font:600 14px/1 \'Manrope\';color:#3A3F47;text-decoration:none">'+t.navProduit+'</a>'
+      + '<a href="/#connecteurs" style="font:600 14px/1 \'Manrope\';color:#3A3F47;text-decoration:none">'+t.navConnecteurs+'</a>'
+      + '<a href="/#agents" style="font:600 14px/1 \'Manrope\';color:#3A3F47;text-decoration:none">'+t.navAgents+'</a>'
+      + '<a href="/cloud/" style="font:600 14px/1 \'Manrope\';color:#3A3F47;text-decoration:none">MEMIA Cloud</a>'
+      + '<a href="/#securite" style="font:600 14px/1 \'Manrope\';color:#3A3F47;text-decoration:none">'+t.navSecurite+'</a>'
+      + '<a href="/#installer" style="font:600 14px/1 \'Manrope\';color:#3A3F47;text-decoration:none">'+t.navInstaller+'</a></nav>'
+      + '<div style="display:flex;align-items:center;gap:10px;margin-left:auto">'
+      + '<div style="display:flex;gap:2px;padding:3px;background:#fff;border:1px solid #ECE3D7;border-radius:10px">'
+      + '<button data-lang="fr" style="padding:6px 11px;border:none;border-radius:7px;font:700 12px/1 \'Manrope\';background:'+frBg+';color:'+frColor+'">FR</button>'
+      + '<button data-lang="en" style="padding:6px 11px;border:none;border-radius:7px;font:700 12px/1 \'Manrope\';background:'+enBg+';color:'+enColor+'">EN</button></div>'
+      + '<a href="/cloud/" style="font:700 13.5px/1 \'Manrope\';color:#fff;background:#BC5E2E;padding:11px 18px;border-radius:11px;text-decoration:none;white-space:nowrap">'+t.headerCta+'</a>'
+      + '</div></div></header>';
+  }
+
+  function view(){
+    var L = state.lang, t = content[L];
+    var h = '<div style="min-height:100vh;display:flex;flex-direction:column">';
+    h += header(t, L);
+    h += '<main style="flex:1"><section style="max-width:1180px;margin:0 auto;padding:60px 20px 40px">'
+      + '<div style="text-align:center;max-width:720px;margin:0 auto">'
+      + '<div style="font:700 11px/1 \'Manrope\';letter-spacing:.15em;text-transform:uppercase;color:#BC5E2E">'+t.eyebrow+'</div>'
+      + '<h1 style="margin:10px 0 0;font:600 40px/1.14 \'Jost\';color:#23282F;letter-spacing:-.01em">'+t.h1+'</h1>'
+      + '<p style="margin:16px auto 0;font:500 16px/1.6 \'Manrope\';color:#3A3F47">'+t.lead+'</p></div>'
+      + '<div style="margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;align-items:stretch">'
+      + t.plans.map(function(p){
+          var featured = p.featured;
+          var cardStyle = featured
+            ? 'background:#FBF4EC;border:1.5px solid #E9C9A6;box-shadow:0 18px 44px -24px rgba(188,94,46,.35)'
+            : 'background:#fff;border:1px solid #ECE3D7';
+          var btnStyle = featured
+            ? 'color:#fff;background:#BC5E2E'
+            : 'color:#23282F;background:#fff;border:1px solid #ECE3D7';
+          return '<div style="'+cardStyle+';border-radius:20px;padding:26px;display:flex;flex-direction:column">'
+            + '<span style="align-self:flex-start;font:700 11px/1 \'Manrope\';letter-spacing:.06em;text-transform:uppercase;color:#A9713F;background:#F6E5D7;padding:6px 11px;border-radius:99px">'+p.tag+'</span>'
+            + '<div style="margin-top:16px;font:600 34px/1 \'Jost\';color:#23282F">'+p.price+(p.unit?'<small style="font:600 14px/1 \'Manrope\';color:#8A8170">'+p.unit+'</small>':'')+'</div>'
+            + '<div style="margin-top:6px;font:500 12.5px/1.4 \'Manrope\';color:#8A8170">'+p.sub+'</div>'
+            + '<div style="margin-top:18px;display:flex;flex-direction:column;gap:11px">'
+            + p.feats.map(function(f){ return '<div style="display:flex;gap:9px;align-items:flex-start"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1E9E6B" stroke-width="2.5" stroke-linecap="round" style="flex:none;margin-top:2px"><path d="M5 13l4 4L19 7"/></svg><span style="font:500 13.5px/1.4 \'Manrope\';color:#3A3F47">'+f+'</span></div>'; }).join('')
+            + '</div>'
+            + '<a href="'+p.href+'" style="margin-top:22px;text-align:center;font:700 14px/1 \'Manrope\';'+btnStyle+';padding:13px 18px;border-radius:11px;text-decoration:none">'+t[p.cta]+'</a>'
+            + '</div>';
+        }).join('')
+      + '</div>'
+      + '<div style="max-width:760px;margin:26px auto 0;background:#FBF7F1;border:1px solid #ECE3D7;border-radius:14px;padding:16px 20px;font:500 12.5px/1.6 \'Manrope\';color:#5A6068;text-align:center">'+t.notice+'</div>'
+      + '</section></main>';
+    h += '<footer style="border-top:1px solid #ECE3D7;padding:28px 20px"><div style="max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between"><div style="display:flex;align-items:center;gap:9px"><img src="'+monogram+'" alt="MEMIA" style="height:20px;width:auto" /><span style="font:600 12.5px/1 \'Manrope\';color:#8A8170">'+t.footerTagline+'</span></div><a href="/" style="font:600 12.5px/1 \'Manrope\';color:#BC5E2E;text-decoration:none">← '+t.back+'</a></div></footer>';
+    h += '</div>';
+    return h;
+  }
+  function render(){ document.getElementById('app').innerHTML = view(); document.documentElement.lang = state.lang; }
+  document.addEventListener('click', function(e){ var el=e.target.closest&&e.target.closest('[data-lang]'); if(!el) return; state.lang=el.getAttribute('data-lang'); try{localStorage.setItem('memia_lang',state.lang)}catch(e){}; render(); });
+  render();
+})();
+</script>
+</body>
+</html>
