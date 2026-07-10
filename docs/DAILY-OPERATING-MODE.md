@@ -117,7 +117,7 @@ memia new project "Refonte onboarding" --domain Product
 MEMIA crée :
 
 ```text
-01 - Projets/Product/PRJ-YYYYMMDD-refonte-onboarding/
+01 - Projects/Product/PRJ-YYYYMMDD-refonte-onboarding/
   README.md
   HANDOVER.md
   DECISIONS.md
@@ -143,7 +143,7 @@ memia new project "Onboarding redesign" --domain Product
 MEMIA creates:
 
 ```text
-01 - Projets/Product/PRJ-YYYYMMDD-onboarding-redesign/
+01 - Projects/Product/PRJ-YYYYMMDD-onboarding-redesign/
   README.md
   HANDOVER.md
   DECISIONS.md
@@ -169,7 +169,7 @@ memia new run "Revue hebdomadaire pipeline" --domain Sales
 Destination :
 
 ```text
-02 - Comptes - Run/Sales/RUN-YYYYMMDD-revue-hebdomadaire-pipeline/
+02 - Control - Run/Sales/RUN-YYYYMMDD-revue-hebdomadaire-pipeline/
 ```
 
 Un run doit être reprenable sans contexte oral.
@@ -185,7 +185,7 @@ memia new run "Weekly pipeline review" --domain Sales
 Destination:
 
 ```text
-02 - Comptes - Run/Sales/RUN-YYYYMMDD-weekly-pipeline-review/
+02 - Control - Run/Sales/RUN-YYYYMMDD-weekly-pipeline-review/
 ```
 
 A run must be resumable without oral context.

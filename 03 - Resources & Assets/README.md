@@ -1,4 +1,4 @@
-# Ressources & Assets
+# Resources & Assets
 
 Doctrine, méthodes, registres, templates, assets et outils non sensibles.
 

@@ -10,9 +10,9 @@ export const IPCRWA = {
   INBOX: "00 - Inbox/Captures",
   SURFACE_FILES: "00 - Inbox/Surfaces/Files",
   SURFACE_SIGNALS: "00 - Inbox/Surfaces/Signals",
-  PROJETS: "01 - Projets",
-  COMPTES_RUN: "02 - Comptes - Run",
-  RESSOURCES: "03 - Ressources & Assets",
+  PROJETS: "01 - Projects",
+  COMPTES_RUN: "02 - Control - Run",
+  RESSOURCES: "03 - Resources & Assets",
   WORKSPACES: "04 - Workspaces",
   ARCHIVES: "05 - Archives"
 };

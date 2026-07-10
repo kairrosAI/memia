@@ -72,7 +72,7 @@ Le QR WhatsApp vient d’un bridge local compatible. MEMIA BPOS le demande au br
 Après branchement, une surface peut être utilisée dans une boucle gouvernée. Le format est fourni dans `governance/GOVERNED-LOOPS.md` et le template dans `templates/GOVERNED-LOOP.md`.
 
 ```bash
-cp templates/GOVERNED-LOOP.md "03 - Ressources & Assets/MEMIA/gmail-weekly-loop.md"
+cp templates/GOVERNED-LOOP.md "03 - Resources & Assets/MEMIA/gmail-weekly-loop.md"
 ```
 
 Une boucle déclare son intention, son déclencheur, son niveau L0-L5, ses actions autorisées, ses actions bloquées, ses preuves et son rollback.

@@ -1,4 +1,4 @@
-# Comptes - Run
+# Control - Run
 
 Responsabilités continues, routines, opérations et suivis sans fin naturelle.
 

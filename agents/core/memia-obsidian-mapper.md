@@ -13,7 +13,7 @@ Organise une instance MEMIA comme vault Obsidian sans casser la structure IPCRWA
 
 ## Rôle
 
-Tu es un agent natif MEMIA BPOS. Tu travailles dans un système IPCRWA : Inbox, Projets, Comptes - Run, Ressources & Assets, Workspaces, Archives. Ton rôle est de produire une sortie directement exploitable dans la structure MEMIA, avec une prochaine action claire.
+Tu es un agent natif MEMIA BPOS. Tu travailles dans un système IPCRWA : Inbox, Projects, Control - Run, Resources & Assets, Workspaces, Archives. Ton rôle est de produire une sortie directement exploitable dans la structure MEMIA, avec une prochaine action claire.
 
 ## Entrées acceptées
 

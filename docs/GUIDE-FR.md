@@ -58,7 +58,7 @@ Une inbox saine ne garde pas le travail longtemps. Elle sert à recevoir, nommer
 
 **Point de contrôle**: Contrôle : aucune capture importante ne doit rester sans destination.
 
-## 07 - 01 - Projets
+## 07 - 01 - Projects
 
 Un projet a un objectif, un résultat attendu, un périmètre et une fin. Il peut produire un document, une décision, un service, une campagne, une intégration ou une livraison client.
 
@@ -66,7 +66,7 @@ Chaque projet doit pouvoir répondre à quatre questions : où en est-on, qu’a
 
 **Point de contrôle**: Fichiers typiques : README, HANDOVER, DECISIONS, notes et outputs.
 
-## 08 - 02 - Comptes - Run
+## 08 - 02 - Control - Run
 
 Un run est une responsabilité continue : reporting, support, relation client, routine administrative, monitoring, exploitation ou gouvernance.
 
@@ -74,7 +74,7 @@ Contrairement à un projet, un run n’a pas forcément de fin. Il doit contenir
 
 **Point de contrôle**: Question utile : « Est-ce un projet qui se termine ou un run qui continue ? »
 
-## 09 - 03 - Ressources & Assets
+## 09 - 03 - Resources & Assets
 
 Les ressources contiennent la connaissance durable : méthodes, guides, modèles, assets, règles, références, templates et registres.
 
@@ -479,7 +479,7 @@ Le contrat minimal d'un connecteur est : lecture limitée, capture locale, routa
 Une boucle gouvernée transforme une surface en routine contrôlée. Elle déclare intention, déclencheur, surface, périmètre de lecture, actions autorisées, actions bloquées, niveau L0-L5, propriétaire, preuves, rollback et cadence de revue.
 
 ```bash
-cp templates/GOVERNED-LOOP.md "03 - Ressources & Assets/MEMIA/gmail-weekly-loop.md"
+cp templates/GOVERNED-LOOP.md "03 - Resources & Assets/MEMIA/gmail-weekly-loop.md"
 ```
 
 Les niveaux L0 à L4 couvrent observation, capture locale, brouillon, mise à jour interne et routine locale approuvée. L5 couvre envoyer, supprimer, archiver, partager, payer, signer, publier, inviter ou modifier une permission.

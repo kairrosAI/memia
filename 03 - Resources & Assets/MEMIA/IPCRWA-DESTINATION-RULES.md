@@ -6,9 +6,9 @@ La destination d'un contenu MEMIA est toujours IPCRWA.
 
 ```text
 00 - Inbox
-01 - Projets
-02 - Comptes - Run
-03 - Ressources & Assets
+01 - Projects
+02 - Control - Run
+03 - Resources & Assets
 04 - Workspaces
 05 - Archives
 _memia
@@ -20,9 +20,9 @@ html
 | Question | Destination |
 |---|---|
 | Capture brute non traitée ? | `00 - Inbox/` |
-| Projet actif avec fin ou livrable ? | `01 - Projets/` |
-| Responsabilité continue ? | `02 - Comptes - Run/` |
-| Doctrine, méthode, registre ou asset durable ? | `03 - Ressources & Assets/` |
+| Projet actif avec fin ou livrable ? | `01 - Projects/` |
+| Responsabilité continue ? | `02 - Control - Run/` |
+| Doctrine, méthode, registre ou asset durable ? | `03 - Resources & Assets/` |
 | Travail temporaire ? | `04 - Workspaces/` |
 | Historique non actif ? | `05 - Archives/` |
 | Log, index ou état technique ? | `_memia/` |

@@ -1,4 +1,4 @@
-# Projets
+# Projects
 
 Chantiers actifs avec une fin, un livrable ou une décision identifiable.
 

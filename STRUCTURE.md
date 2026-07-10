@@ -7,9 +7,9 @@ IPCRWA est le modèle de rangement canonique de MEMIA.
 | Dossier | Rôle | Règle |
 |---|---|---|
 | `00 - Inbox/` | Captures brutes | Zone d'entrée non durable. |
-| `01 - Projets/` | Projets actifs | Chantiers avec fin, livrable ou décision identifiable. |
-| `02 - Comptes - Run/` | Runs continus | Responsabilités durables, opérations, suivi régulier. |
-| `03 - Ressources & Assets/` | Ressources durables | Doctrine, méthodes, registres, templates, assets et outils non sensibles. |
+| `01 - Projects/` | Projets actifs | Chantiers avec fin, livrable ou décision identifiable. |
+| `02 - Control - Run/` | Runs continus | Responsabilités durables, opérations, suivi régulier. |
+| `03 - Resources & Assets/` | Ressources durables | Doctrine, méthodes, registres, templates, assets et outils non sensibles. |
 | `04 - Workspaces/` | Travail temporaire | Recherche, brouillon, comparaison, transformation, POC. |
 | `05 - Archives/` | Archives décidées | Historique non actif, conservé pour lecture. |
 | `_memia/` | Métadonnées machine | Logs, registres, états locaux et index dérivés. |
@@ -26,7 +26,7 @@ IPCRWA est le modèle de rangement canonique de MEMIA.
 ## Forme d'un projet
 
 ```text
-01 - Projets/<domaine>/<code-projet>/
+01 - Projects/<domaine>/<code-projet>/
   README.md
   HANDOVER.md
   DECISIONS.md
@@ -39,7 +39,7 @@ IPCRWA est le modèle de rangement canonique de MEMIA.
 ## Forme d'un run
 
 ```text
-02 - Comptes - Run/<domaine>/<nom-run>/
+02 - Control - Run/<domaine>/<nom-run>/
   README.md
   HANDOVER.md
   DECISIONS.md

@@ -10,13 +10,13 @@ const cwd = process.cwd();
 
 const requiredDirs = [
   "00 - Inbox/Captures",
-  "01 - Projets",
-  "02 - Comptes - Run",
-  "03 - Ressources & Assets/MEMIA",
-  "03 - Ressources & Assets/Methods",
-  "03 - Ressources & Assets/Registries",
-  "03 - Ressources & Assets/Templates",
-  "03 - Ressources & Assets/Tools",
+  "01 - Projects",
+  "02 - Control - Run",
+  "03 - Resources & Assets/MEMIA",
+  "03 - Resources & Assets/Methods",
+  "03 - Resources & Assets/Registries",
+  "03 - Resources & Assets/Templates",
+  "03 - Resources & Assets/Tools",
   "04 - Workspaces",
   "05 - Archives",
   "_memia/registry",
@@ -63,8 +63,8 @@ const starterEntries = [
   "package.json",
   "scripts",
   "templates",
-  "03 - Ressources & Assets/MEMIA/CAPTURE-DESTINATIONS-ROUTINES.md",
-  "03 - Ressources & Assets/MEMIA/IPCRWA-DESTINATION-RULES.md"
+  "03 - Resources & Assets/MEMIA/CAPTURE-DESTINATIONS-ROUTINES.md",
+  "03 - Resources & Assets/MEMIA/IPCRWA-DESTINATION-RULES.md"
 ];
 
 const defaultGitignore = `# Environnements locaux
@@ -165,7 +165,7 @@ function writeObsidianConfig(root) {
   writeIfMissing(path.join(root, ".obsidian/app.json"), JSON.stringify({
     alwaysUpdateLinks: true,
     newFileLocation: "current",
-    attachmentFolderPath: "03 - Ressources & Assets/Attachments"
+    attachmentFolderPath: "03 - Resources & Assets/Attachments"
   }, null, 2) + "\n");
   writeIfMissing(path.join(root, ".obsidian/core-plugins.json"), JSON.stringify([
     "file-explorer",
@@ -175,7 +175,7 @@ function writeObsidianConfig(root) {
     "outgoing-link",
     "tag-pane"
   ], null, 2) + "\n");
-  writeIfMissing(path.join(root, "03 - Ressources & Assets/MEMIA/OBSIDIAN.md"), [
+  writeIfMissing(path.join(root, "03 - Resources & Assets/MEMIA/OBSIDIAN.md"), [
     "# Obsidian avec MEMIA BPOS",
     "",
     "Ouvrir la racine MEMIA comme vault Obsidian.",
@@ -282,7 +282,7 @@ function createSurfaceCapture(surface, name) {
 function createProject(name, domain = "General") {
   const slug = slugify(name);
   const code = `PRJ-${compactDate()}-${slug}`;
-  const dir = path.join(cwd, "01 - Projets", domain, code);
+  const dir = path.join(cwd, "01 - Projects", domain, code);
   ensureDir(dir);
   writeTemplate(path.join(dir, "README.md"), readTemplate("templates/PROJECT/README.md", "# <Code projet> - <Nom du projet>\n")
     .replace("<Code projet>", code)
@@ -295,7 +295,7 @@ function createProject(name, domain = "General") {
 function createRun(name, domain = "General") {
   const slug = slugify(name);
   const code = `RUN-${compactDate()}-${slug}`;
-  const dir = path.join(cwd, "02 - Comptes - Run", domain, code);
+  const dir = path.join(cwd, "02 - Control - Run", domain, code);
   ensureDir(dir);
   writeTemplate(path.join(dir, "README.md"), readTemplate("templates/RUN/README.md", "# <Nom du run>\n")
     .replace("<Nom du run>", name));

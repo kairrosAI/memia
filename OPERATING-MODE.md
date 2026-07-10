@@ -32,9 +32,9 @@ La destination est toujours IPCRWA.
 | Question | Destination |
 |---|---|
 | Est-ce une entrée brute ? | `00 - Inbox/` |
-| Est-ce un chantier avec fin ? | `01 - Projets/` |
-| Est-ce une responsabilité continue ? | `02 - Comptes - Run/` |
-| Est-ce une référence durable ? | `03 - Ressources & Assets/` |
+| Est-ce un chantier avec fin ? | `01 - Projects/` |
+| Est-ce une responsabilité continue ? | `02 - Control - Run/` |
+| Est-ce une référence durable ? | `03 - Resources & Assets/` |
 | Est-ce un travail temporaire ? | `04 - Workspaces/` |
 | Est-ce historique ou non actif ? | `05 - Archives/` |
 | Est-ce un état machine ou un log ? | `_memia/` |

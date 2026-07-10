@@ -479,7 +479,7 @@ The minimal connector contract is limited read, local capture, IPCRWA routing, e
 A governed loop turns a surface into a controlled routine. It declares intent, trigger, surface, read scope, allowed actions, blocked actions, L0-L5 level, owner, evidence, rollback and review cadence.
 
 ```bash
-cp templates/GOVERNED-LOOP.md "03 - Ressources & Assets/MEMIA/gmail-weekly-loop.md"
+cp templates/GOVERNED-LOOP.md "03 - Resources & Assets/MEMIA/gmail-weekly-loop.md"
 ```
 
 L0 to L4 cover observation, local capture, draft, internal update and approved local scheduled routine. L5 covers sending, deleting, archiving, sharing, paying, signing, publishing, inviting or changing permissions.

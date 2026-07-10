@@ -12,13 +12,13 @@ const packageRoot = path.resolve(__dirname, "..");
 
 const requiredDirs = [
   "00 - Inbox/Captures",
-  "01 - Projets",
-  "02 - Comptes - Run",
-  "03 - Ressources & Assets/MEMIA",
-  "03 - Ressources & Assets/Methods",
-  "03 - Ressources & Assets/Registries",
-  "03 - Ressources & Assets/Templates",
-  "03 - Ressources & Assets/Tools",
+  "01 - Projects",
+  "02 - Control - Run",
+  "03 - Resources & Assets/MEMIA",
+  "03 - Resources & Assets/Methods",
+  "03 - Resources & Assets/Registries",
+  "03 - Resources & Assets/Templates",
+  "03 - Resources & Assets/Tools",
   "04 - Workspaces",
   "05 - Archives",
   "_memia/registry",
@@ -65,8 +65,8 @@ const starterEntries = [
   "package.json",
   "scripts",
   "templates",
-  "03 - Ressources & Assets/MEMIA/CAPTURE-DESTINATIONS-ROUTINES.md",
-  "03 - Ressources & Assets/MEMIA/IPCRWA-DESTINATION-RULES.md"
+  "03 - Resources & Assets/MEMIA/CAPTURE-DESTINATIONS-ROUTINES.md",
+  "03 - Resources & Assets/MEMIA/IPCRWA-DESTINATION-RULES.md"
 ];
 
 const defaultGitignore = `# Environnements locaux
@@ -175,7 +175,7 @@ function createItem(root, type, name, domain = "General") {
 
   if (type === "project") {
     const code = `PRJ-${compactDate()}-${slug}`;
-    const dir = path.join(base, "01 - Projets", domain, code);
+    const dir = path.join(base, "01 - Projects", domain, code);
     ensureDir(dir);
     writeIfMissing(path.join(dir, "README.md"), readTemplate(base, "templates/PROJECT/README.md", "# <Code projet> - <Nom du projet>\n").replace("<Code projet>", code).replace("<Nom du projet>", name));
     writeIfMissing(path.join(dir, "HANDOVER.md"), readTemplate(base, "templates/PROJECT/HANDOVER.md", "# Handover\n"));
@@ -185,7 +185,7 @@ function createItem(root, type, name, domain = "General") {
 
   if (type === "run") {
     const code = `RUN-${compactDate()}-${slug}`;
-    const dir = path.join(base, "02 - Comptes - Run", domain, code);
+    const dir = path.join(base, "02 - Control - Run", domain, code);
     ensureDir(dir);
     writeIfMissing(path.join(dir, "README.md"), readTemplate(base, "templates/RUN/README.md", "# <Nom du run>\n").replace("<Nom du run>", name));
     writeIfMissing(path.join(dir, "HANDOVER.md"), readTemplate(base, "templates/RUN/HANDOVER.md", "# Handover\n"));
@@ -278,7 +278,7 @@ function writeObsidianConfig(base) {
   writeIfMissing(path.join(base, ".obsidian/app.json"), JSON.stringify({
     alwaysUpdateLinks: true,
     newFileLocation: "current",
-    attachmentFolderPath: "03 - Ressources & Assets/Attachments"
+    attachmentFolderPath: "03 - Resources & Assets/Attachments"
   }, null, 2) + "\n");
   writeIfMissing(path.join(base, ".obsidian/core-plugins.json"), JSON.stringify([
     "file-explorer",
@@ -288,7 +288,7 @@ function writeObsidianConfig(base) {
     "outgoing-link",
     "tag-pane"
   ], null, 2) + "\n");
-  writeIfMissing(path.join(base, "03 - Ressources & Assets/MEMIA/OBSIDIAN.md"), [
+  writeIfMissing(path.join(base, "03 - Resources & Assets/MEMIA/OBSIDIAN.md"), [
     "# Obsidian avec MEMIA BPOS",
     "",
     "Ouvrir la racine MEMIA comme vault Obsidian.",

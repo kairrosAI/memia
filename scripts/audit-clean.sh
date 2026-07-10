@@ -16,9 +16,9 @@ require_dir() {
 }
 
 require_dir "00 - Inbox"
-require_dir "01 - Projets"
-require_dir "02 - Comptes - Run"
-require_dir "03 - Ressources & Assets"
+require_dir "01 - Projects"
+require_dir "02 - Control - Run"
+require_dir "03 - Resources & Assets"
 require_dir "04 - Workspaces"
 require_dir "05 - Archives"
 require_dir "_memia"

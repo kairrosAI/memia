@@ -11,9 +11,9 @@
 
 ## Routine mensuelle
 
-1. Revoir `01 - Projets/` et `02 - Comptes - Run/`.
+1. Revoir `01 - Projects/` et `02 - Control - Run/`.
 2. Supprimer les workspaces obsolètes.
-3. Consolider les méthodes utiles dans `03 - Ressources & Assets/`.
+3. Consolider les méthodes utiles dans `03 - Resources & Assets/`.
 4. Vérifier que `html/` ne remplace pas les sources canoniques.
 5. Mettre à jour les règles de sécurité si des intégrations sont ajoutées.
 

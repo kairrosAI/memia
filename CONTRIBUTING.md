@@ -4,7 +4,7 @@ Contributions are welcome when they keep MEMIA BPOS local-first, LLM-agnostic, s
 
 ## Rules
 
-- Keep IPCRWA exact : `00 - Inbox`, `01 - Projets`, `02 - Comptes - Run`, `03 - Ressources & Assets`, `04 - Workspaces`, `05 - Archives`.
+- Keep IPCRWA exact : `00 - Inbox`, `01 - Projects`, `02 - Control - Run`, `03 - Resources & Assets`, `04 - Workspaces`, `05 - Archives`.
 - Do not commit secrets, credentials, private caches, personal exports or tool state.
 - Do not add a connector without a security note, permissions model and rollback.
 - Keep agents LLM-agnostic.
